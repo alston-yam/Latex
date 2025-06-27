@@ -1,0 +1,128 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{empheq}
+\usepackage{mdframed}
+\usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{psfrag}
+\usepackage{pgfplots}
+\usepackage{bm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Other Settings
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\geometry{a4paper}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define some useful colors %%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{ocre}{RGB}{243,102,25}
+\definecolor{mygray}{RGB}{243,243,244}
+\definecolor{deepGreen}{RGB}{26,111,0}
+\definecolor{shallowGreen}{RGB}{235,255,255}
+\definecolor{deepBlue}{RGB}{61,124,222}
+\definecolor{shallowBlue}{RGB}{235,249,255}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define an orangebox command %%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\orangebox[1]{\fcolorbox{ocre}{mygray}{\hspace{1em}#1\hspace{1em}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% English Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheoremstyle{mytheoremstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\newtheoremstyle{myproblemstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowGreen,linecolor=deepGreen,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{theorem}{Theorem}[section]
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowBlue,linecolor=deepBlue,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{definition}{Definition}[section]
+\theoremstyle{myproblemstyle}
+\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{problem}{Problem}[section]
+\theoremstyle{myproblemstyle}
+\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{example}{Example}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Plotting Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepgfplotslibrary{colorbrewer}
+\pgfplotsset{width=8cm,compat=1.9}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Proof by Contradiction}
+\author{Alston Yam}
+\parindent=0in
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+    \maketitle
+
+    \section{Introduction}
+        Proof by Contradiction is a commonly used tool in Maths Olympiad. The proof starts by assuming the opposite of what you're trying to prove, and by showing that this assumption leads to a contradiction through a series of logical deductions, we can conclude that our initial assumption was false. This then implies that what we were trying to prove is true, so we would be done.
+        \bigskip
+
+        Let's use a few examples to see this method in action.
+        
+        \begin{example}
+            Prove that there are infinitely many prime numbers.
+        \end{example}
+
+        \textit{Proof.} For the sake of contradiction (FTSOC), assume that there are only finitely many prime numbers. Denote them by a set like so: \[P = \{ p_1, p_2, p_3, \dots, p_n \} \]
+        Consider the number $N = p_1 \cdot p_2 \cdot p_3 \cdots p_n + 1$. Since $N$ is not divisible by any of the primes in $P$, it must have another divisor not in $P$. This contradicts our assumption all primes are in $P$. Therefore, there are infinitely many prime numbers. $\blacksquare$
+
+        \begin{example}
+            Show that \[ b^2 + b + 1 = a^2 \] has no positive integer solutions.
+        \end{example}
+
+        \textit{Proof.} FTSOC, assume that there exists a set of positive integers $(a, b)$ that satisfy the equation. First, we must notice that $b < a$, as otherwise, LHS $>$ RHS (Tiny PbC :0). Then, we can rewrite the equation as: \[ b^2 + b + 1 = a^2 \iff b + 1 = a^2 - b^2 \iff b + 1 = (a-b)(a+b) \]
+        We know that $a > b \geq 1$. This means that $a - b \geq 1$, and $a + b \geq b + 2$, which when combined gives $(a-b)(a+b) \geq b+2$. But we have $b + 1 = (a-b)(a+b) \geq b+2$, contradiction! $\blacksquare$
+        
+        \begin{example}
+            Prove that math is the best subject.
+        \end{example}
+        \textit{Proof.} FTSOC, assume that math is not the best subject. This implies that there exists a subject that is better than math, absurd! $\blacksquare$
+
+    \clearpage
+
+    \section{When to use Proof by Contradiction?}
+        Hopefully from the previous section, you now have a general idea of how a Proof by Contradiction works, and how to write up one in your solution. Here, I will go over some common patterns that emerge in problems where a Proof by Contradiction is appropriate: 
+        \begin{itemize}
+            \item When the statement ask you to prove that there exist a P that satisfy some property Q.
+            \item When the problem statement ask you to prove the existence of an infinite number of something (refer back to Example 1.1).
+            \item When the statement gives you very little information about what you're trying to prove.
+        \end{itemize}
+
+        In particular, I find the first point really useful. This is because we can now work with the condition that ``there are no number P that satisfy property Q'', which is quite cool.
+    \section{Problems}
+    \bigskip
+
+    \begin{problem}
+        Prove that $\sqrt{2}$ is irrational.
+    \end{problem}
+
+    \begin{problem}
+        Prove that $\sqrt[m]{n}$ is either irrational or an integer $\forall n, m \in \mathbb{N}$.
+    \end{problem}
+
+    \begin{problem}
+        Prove that there are no triangular numbers which is one less than a multiple of 11. (Triangular numbers are of the form $n = \frac{k(k+1)}{2}$, where $k$ is a positive integer.)
+    \end{problem}
+        
+    \begin{problem}
+        Show that if $2^x = 3$, then $x$ is irrational.
+    \end{problem}
+
+    \begin{problem}
+        
+    \end{problem}
+
+\end{document}
+

@@ -1,0 +1,212 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{empheq}
+\usepackage{mdframed}
+\usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{psfrag}
+\usepackage{pgfplots}
+\usepackage{bm}
+\usepackage{dirtytalk}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Other Settings
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\geometry{a4paper}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define some useful colors %%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{ocre}{RGB}{243,102,25}
+\definecolor{mygray}{RGB}{243,243,244}
+\definecolor{deepGreen}{RGB}{26,111,0}
+\definecolor{shallowGreen}{RGB}{235,255,255}
+\definecolor{deepBlue}{RGB}{61,124,222}
+\definecolor{shallowBlue}{RGB}{235,249,255}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define an orangebox command %%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\orangebox[1]{\fcolorbox{ocre}{mygray}{\hspace{1em}#1\hspace{1em}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% English Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheoremstyle{mytheoremstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\newtheoremstyle{myproblemstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowGreen,linecolor=deepGreen,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{theorem}{Theorem}[section]
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowBlue,linecolor=deepBlue,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{definition}{Definition}[section]
+\theoremstyle{myproblemstyle}
+\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{problem}{Problem}[section]
+\theoremstyle{myproblemstyle}
+\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{exercise}{Exercise}[section]
+\theoremstyle{myproblemstyle}
+\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{example}{Example}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Plotting Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepgfplotslibrary{colorbrewer}
+\pgfplotsset{width=8cm,compat=1.9}
+\parindent=0pt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{All About Primes}
+\date{}
+\author{Alston Yam}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+    \maketitle
+    \begin{center}
+        \say{Choices are made in brief seconds and paid for in the time that remains.}
+        
+        \begin{flushright}
+            \textit{—Paolo Giordano, The Solitude of Prime Numbers}
+        \end{flushright}
+    \end{center}
+        
+
+    \section{Introduction}
+    Prime numbers present an interesting field of study in number theory. In this lecture we will explore some unique properties of primes and also some applications of them in the context of mathematical competitions.
+    \section{Prime Numbers}
+
+    \begin{definition}[Prime Number]
+        A \textbf{prime} number is a natural number that only has two distinct positive divisors.
+    \end{definition}
+
+
+    We will define a \textbf{composite} number as a natural number that has more than two positive divisors.
+    
+    \begin{exercise}
+        Is $1$ a prime number? Justify your answer.
+    \end{exercise}
+    
+    As we will soon see, primes are the ``building blocks'' of the natural numbers, and understanding them will give you a great grasp on number theory. 
+    \vspace{5pt}
+
+    Lets begin with a classic yet important result on the prime numbers.
+    \begin{theorem}[Euclid's Theorem]\label{Euclid's theorem}
+        Prove that there are infinitely many prime numbers.
+    \end{theorem} 
+
+    \begin{proof}
+        Assume that there are only finitely many prime numbers, say $\{p_1, p_2, \ldots, p_n\}$. Consider the number $$N = p_1 p_2 \cdots p_n + 1$$
+        By construction, $N$ is not divisible by any of the primes $p_1, p_2, \ldots, p_n$, since dividing $N$ by any of these primes leaves a remainder of $1$. Therefore, either $N$ is prime itself or it has a prime factor that is not in our original list. 
+        In either case, we have found a prime number that is not in our original list, contradicting the assumption that there are only finitely many primes. Thus, there must be infinitely many prime numbers.
+    \end{proof}
+
+    This seems logical, however the above proof is not rigorous. To actually complete the proof, we will need to invoke the following theorem:
+
+
+    
+    \subsection{Fundamental Theorem of Arithmetic}
+    \begin{theorem}[Fundamental Theorem of Arithmetic]
+        Every integer greater than $1$ can be \textbf{uniquely} expressed as a product of prime numbers, up to the order of the factors.
+    \end{theorem}
+
+    That is to say, every integer $n > 1$ has a unique representation of the form 
+    \begin{equation*}
+        n = p_1^{e_1} p_2^{e_2} \cdots p_k^{e_k}
+    \end{equation*}
+
+    This will allow us to complete the proof of Theorem~\ref{Euclid's theorem}. Specifically, only when we use this theorem can we say that $N$ is able to be ``split'' into prime factors, leading to us to find our desired prime that is not in the set $\{p_1, p_2, \ldots, p_n\}$.
+
+    \begin{exercise}
+        Find the prime factorisation of $91$. 
+    \end{exercise}
+
+    \textbf{Problem solving tip:} When you encounter a problem involving integers, it's always a good idea to consider the prime factors of that number! Sometimes considering the biggest/smallest prime divisors of that number gives unexpected results that we can liase.
+
+    \section{GCD and LCM}
+    We will now move on to some more useful applications of prime numbers, and this section will be dedicated to finding the GCD and the LCM of two integers $a$ and $b$. 
+    Lets first denote the prime factorisation of $a$ and $b$ as follows:
+    \[a = p_1^{\alpha_1}p_2^{\alpha_2} \ldots p_k^{\alpha_k}\]
+    \[b = p_1^{\beta_1}p_2^{\beta_2} \ldots p_k^{\beta_k}\]
+    where $p_i$ are the prime factors of $a$ and $b$, and $\alpha_i, \beta_i$ are the respective powers of these primes in the factorisations of $a$ and $b$ (Notice that some of $\alpha_i$ and $\beta_i$ are possibly equal to $0$).
+    
+
+    \begin{definition}[GCD and LCM]
+        The \textbf{greatest common divisor} (GCD) of $a$ and $b$, denoted $\gcd(a, b)$, is defined as:
+        \[
+        \gcd(a, b) = p_1^{\min(\alpha_1, \beta_1)} p_2^{\min(\alpha_2, \beta_2)} \cdots p_k^{\min(\alpha_k, \beta_k)}
+        \]
+        The \textbf{least common multiple} (LCM) of $a$ and $b$, denoted $\mathrm{lcm}(a, b)$, is defined as:
+        \[
+        \mathrm{lcm}(a, b) = p_1^{\max(\alpha_1, \beta_1)} p_2^{\max(\alpha_2, \beta_2)} \cdots p_k^{\max(\alpha_k, \beta_k)}
+        \]
+    \end{definition}
+
+
+
+    \begin{example}
+        For any two positive integers $a$ and $b$, we have $$ab = \mathrm{lcm}(a, b)\gcd(a, b)$$
+    \end{example}
+
+    \begin{proof}
+        This follows directly from the definitions of GCD and LCM. 
+        \begin{align*}
+            ab &= p_1^{\alpha_1 + \beta_1} p_2^{\alpha_2 + \beta_2} \cdots p_k^{\alpha_k + \beta_k} \\
+            &= p_1^{\max(\alpha_1, \beta_1) + \min(\alpha_1, \beta_1)} p_2^{\max(\alpha_2, \beta_2) + \min(\alpha_2, \beta_2)} \cdots p_k^{\max(\alpha_k, \beta_k) + \min(\alpha_k, \beta_k)}\\
+            &= \mathrm{lcm}(a, b) \gcd(a, b)
+        \end{align*}
+    \end{proof}
+
+    \section{Euler's Totient Function}
+    \begin{definition}[Euler's Totient Function]
+        We define the function $\varphi(n)$ to be the number of positive integers less than $n$ that are coprime to $n$.
+    \end{definition}
+
+    This function also has a formula:
+    \[\varphi(n) = n \left(1 - \frac{1}{p_1}\right)\left(1 - \frac{1}{p_2}\right)\cdots \left(1 - \frac{1}{p_k}\right)\]
+    Where $p_1, p_2, \ldots, p_k$ are the distinct prime factors of $n$.
+
+    \vspace{5pt}
+
+    To arrive at this formula, we will need the following lemma, which we state without proof. 
+    
+    \begin{theorem}[Multiplicity of Euler's Totient Function]
+        If $a$ and $b$ are coprime integers, then 
+        \[
+        \varphi(ab) = \varphi(a) \cdot \varphi(b)
+        \]
+    \end{theorem}
+
+
+    \vspace{5pt}
+
+    We also have the following interesting property of the Totient Function.
+    \begin{theorem}[Gauss]
+        $$\displaystyle\sum_{d \mid n}{} \varphi(d) = n$$     
+    \end{theorem}
+    
+    \section{Problems}
+    \begin{problem}
+        If $p < q$ are two consecutive odd prime numbers, show that $p + q$ has at least 3 (not necessarily distinct) prime factors. 
+    \end{problem}
+
+    \begin{problem}
+        Find all positive integers $n$ such that $3n-4$, $4n-5$, $5n-3$ are all prime numbers.
+    \end{problem}
+
+
+    \begin{problem}
+        Prove Theorem 4.1 and Theorem 4.2.
+    \end{problem}
+    \begin{problem}[IMO 1959/1] 
+        Prove that for any natural number $n$, the fraction $\frac{21n + 4}{14n+3}$ is irreducible.
+    \end{problem}
+
+    \begin{problem}[NZMO 2023]
+        Do there exist infinitely many triples ($p$, $q$, $r$) of positive integers with $p > q > r > 1$ such that the product \[p! \cdot q! \cdot r!\] is a perfect square?
+    \end{problem}
+\end{document}
