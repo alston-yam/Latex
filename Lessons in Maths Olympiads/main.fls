@@ -1,8 +1,8 @@
-PWD /Users/alstonhome/Documents/Coding/Latex Test/Lessons in Maths Olympiads
+PWD /Users/alstonhome/Documents/Coding/Latex/Lessons in Maths Olympiads
 INPUT /usr/local/texlive/2023/texmf.cnf
 INPUT /usr/local/texlive/2023/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/alstonhome/Documents/Coding/Latex Test/Lessons in Maths Olympiads/main.tex
+INPUT /Users/alstonhome/Documents/Coding/Latex/Lessons in Maths Olympiads/main.tex
 OUTPUT main.log
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
