@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1751169214 "/Users/alstonhome/Documents/Coding/Latex Test/Method of Moving Points/movingpoint.tex" "movingpoint.pdf" "movingpoint" 1751169215 0
-  "/Users/alstonhome/Documents/Coding/Latex Test/Method of Moving Points/movingpoint.tex" 1751169214 5548 ec9a1a3cfc12463750cd28eb05c44c81 ""
+["pdflatex"] 1751171798 "/Users/alstonhome/Documents/Coding/Latex/Method of Moving Points/movingpoint.tex" "movingpoint.pdf" "movingpoint" 1751171800 0
+  "/Users/alstonhome/Documents/Coding/Latex/Method of Moving Points/movingpoint.tex" 1751171798 6429 4eefa4aa0948e9503a2681a8126264db ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1246382020 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1246382020 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
@@ -41,6 +41,7 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1248133631 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1248133631 32080 340ef9bf63678554ee606688e7b5339d ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1248133631 36281 c355509802a035cadc5f15869451dcee ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1248133631 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1248133631 32362 179c33bbf43f19adbb3825bb4e36e57a ""
@@ -234,9 +235,9 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1684577642 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1684577578 7883455 80981563007626fdfb5989e886054b0f ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "movingpoint.aux" 1751169215 2089 3509bed8db90fe0e6749e8bf58ef0877 "pdflatex"
-  "movingpoint.out" 1751169215 2265 6c13f4a0cc53f1ae3f59c99ad1a1d882 "pdflatex"
-  "movingpoint.tex" 1751169214 5548 ec9a1a3cfc12463750cd28eb05c44c81 ""
+  "movingpoint.aux" 1751171800 2202 bc65cf8d2a1c9154dca7972811589526 "pdflatex"
+  "movingpoint.out" 1751171800 2392 2732db501e0253e5fd0b8b2544558e94 "pdflatex"
+  "movingpoint.tex" 1751171798 6429 4eefa4aa0948e9503a2681a8126264db ""
   (generated)
   "movingpoint.aux"
   "movingpoint.log"

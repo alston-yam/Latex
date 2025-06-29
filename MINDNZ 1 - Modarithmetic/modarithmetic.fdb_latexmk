@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1750189469 "/Users/alstonhome/Documents/Coding/Latex Test/modarithmetic.tex" "modarithmetic.pdf" "modarithmetic" 1750189470 0
-  "/Users/alstonhome/Documents/Coding/Latex Test/modarithmetic.tex" 1750189469 9949 590894eea82d1d150b90ad186e961054 ""
+["pdflatex"] 1751201832 "/Users/alstonhome/Documents/Coding/Latex/MINDNZ 1 - Modarithmetic/modarithmetic.tex" "modarithmetic.pdf" "modarithmetic" 1751201833 0
+  "/Users/alstonhome/Documents/Coding/Latex/MINDNZ 1 - Modarithmetic/modarithmetic.tex" 1751201831 9949 cfab24929a666000d529d52180af399d ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1246382020 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1246382020 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
@@ -217,8 +217,8 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1684577642 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1684577578 7883455 80981563007626fdfb5989e886054b0f ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "modarithmetic.aux" 1750189470 855 5cc83da5e61c74d80c62750d2b46aa78 "pdflatex"
-  "modarithmetic.tex" 1750189469 9949 590894eea82d1d150b90ad186e961054 ""
+  "modarithmetic.aux" 1751201833 855 5cc83da5e61c74d80c62750d2b46aa78 "pdflatex"
+  "modarithmetic.tex" 1751201831 9949 cfab24929a666000d529d52180af399d ""
   (generated)
   "modarithmetic.aux"
   "modarithmetic.log"

@@ -1,8 +1,8 @@
-PWD /Users/alstonhome/Documents/Coding/Latex Test
+PWD /Users/alstonhome/Documents/Coding/Latex/MINDNZ 1 - Modarithmetic
 INPUT /usr/local/texlive/2023/texmf.cnf
 INPUT /usr/local/texlive/2023/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/alstonhome/Documents/Coding/Latex Test/modarithmetic.tex
+INPUT /Users/alstonhome/Documents/Coding/Latex/MINDNZ 1 - Modarithmetic/modarithmetic.tex
 OUTPUT modarithmetic.log
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
