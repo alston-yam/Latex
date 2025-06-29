@@ -98,6 +98,47 @@
 
     \begin{proof}
         We will first prove the case where $ABC$ is acute, and then deal with the obtuse case.
+
+        Let $H$ denote the orthocenter of the triangle $ABC$. Drop the perpendiculars from $H$ to each of the sides $BC$, $AC$, $AB$ to be $D, E, F$ respectively. Now, WLOG point $P$ lies inside the quadrilateral $AEFH$. We will prove that the reflection of point $P$ across $K$ will be outside of $(ABC)$ (notice I have renamed a few points for convenience). In fact, we just need to prove $KR > KQ$ for this to work. 
+
+        Now, WLOG $FH < EH$. $P$ can lie on either the same side of $AH$ as $F$, or the opposite. If $P$ lies on the same side of $AH$ as $F$, we have $KR > HD > KQ$ so we're done. Henceforth we assume $P$ lies ont he same side of $AH$ as $E$.
+
+
+        In the above diagram, let 
+        
+        \begin{align*}
+            \alpha &= \angle QBC = \angle QAC \text{ (green)}\\
+            \beta &= \angle CBE = \angle DAC \text{ (purple)}\\
+            \gamma &= \angle DAK \text{ (blue)}
+        \end{align*}
+
+        We start with the following manipulation:
+
+        \begin{align*}
+            \sin(2\beta)\cos(2\gamma) - \cos(2\beta)\sin(2\gamma) &< \sin(2\beta)\\
+            \sin(2(\beta-\gamma)) &< \sin(2\beta)\\
+            \sin(2\alpha) &< \sin(2\beta)\\
+            \cos(\alpha)\sin(\alpha) &< \cos(\beta)\sin(\beta)\\
+            \frac{\cos(\alpha)}{\cos(\beta)} &< \frac{\sin(\beta)}{\sin(\alpha)}
+        \end{align*}
+
+        Now, we also have by sine rule in $\triangle ARB$ and $\triangle AQB$: 
+        \[\frac{BR}{\sin(\angle BAR)} = \frac{AB}{\sin(\angle ARB)} = \frac{AB}{\sin(\angle ARE)} = \frac{AB}{\sin(90-\alpha)} = \frac{AB}{\cos(\alpha)}\]
+        \[\frac{BQ}{\sin(\angle BAR)} = \frac{AB}{\sin(\angle C)} = \frac{AB}{\sin(90 - \beta)} = \frac{AB}{\cos(\beta)}\]
+        Hence \[\frac{BQ}{BR} = \frac{\cos(\alpha)}{\cos(\beta)} < \frac{\sin(\beta)}{\sin(\alpha)}\]
+
+        and we have \[BQ\sin(\alpha) < BR\sin(\beta) \iff YQ < RX\]
+
+        But this is enough to deduce $KQ < KR$ as $\triangle RKX \sim \triangle QKY$. So we're done in the $ABC$ acute case. Now we handle obtuse:
+
+        \begin{center}
+            \includegraphics[scale=0.4]{2019_G4_2.png}
+
+            \textit{Fig 2: Obtuse case of 2019 G4.}
+        \end{center}
+
+
+        We still construct the orthocenter $H$. Notice that $P$ must be within the shaded region, and by our work on acute triangles before, the reflection of $P$ across $BD$ or $AC$ will always lie outside of $(AHB)$, as $\triangle AHB$ is acute. Finally, notice that this is enough to finish the problem, as $(AHB)$ completely encloses the arc $ACB$ on the circumcircle of $\triangle ABC$.
     \end{proof}
 
     \textbf{Remark:} As I was attempting this problem, I told myself that barycentric coordinates would be an easy way to solve this, but I didn't know how they worked :( It turns out, this problem is much easier with a bary bash. 
