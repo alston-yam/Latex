@@ -1,0 +1,119 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{empheq}
+\usepackage{mdframed}
+\usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{psfrag}
+\usepackage{pgfplots}
+\usepackage{bm}
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=red]{hyperref}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Other Settings
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\geometry{a4paper}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define some useful colors %%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{ocre}{RGB}{243,102,25}
+\definecolor{mygray}{RGB}{243,243,244}
+\definecolor{deepGreen}{RGB}{26,111,0}
+\definecolor{shallowGreen}{RGB}{235,255,255}
+\definecolor{deepBlue}{RGB}{61,124,222}
+\definecolor{shallowBlue}{RGB}{235,249,255}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define an orangebox command %%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\orangebox[1]{\fcolorbox{ocre}{mygray}{\hspace{1em}#1\hspace{1em}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% English Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheoremstyle{mytheoremstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\newtheoremstyle{myproblemstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowGreen,linecolor=deepGreen,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{theorem}{Theorem}[section]
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowBlue,linecolor=deepBlue,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{definition}{Definition}[section]
+\theoremstyle{myproblemstyle}
+\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{problem}{Problem}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Plotting Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepgfplotslibrary{colorbrewer}
+\pgfplotsset{width=8cm,compat=1.9}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Method of Moving Points}
+\author{Alston Yam}
+\date{}
+\parskip=5pt
+\parindent=0pt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+    \maketitle
+
+    \section{Introduction}
+    Inspired by \href{https://web.evanchen.cc/static/mop/mockimo/2020.pdf}{problem 4} on this IMO mock by Evan Chen.
+
+    \section{Cross Ratios}
+    \begin{definition}[Cross Ratios]
+        Given 4 distinct points $A, B, C, D$ on a line, the cross ratio $(A, B; C, D)$ is defined as \[(A, B; C, D) = \frac{AC \cdot BD}{BC \cdot AD}\]
+        Where the lengths are taken to be directed $(XY = -YX)$.
+    \end{definition}
+
+    We can actually extend the definition of the cross ratio to not just points on a line, but also four points on a conic $\gamma$ (the most commonly used conic in Olympiad geometry is a circle), and also a \textit{pencil} of lines through a particular point. In the latter case $A, B, C, D$ will correspond to lines rather than points.
+
+    In the case of a pencil, the cross ratio can actually be thought of as the ratio of the sines of the angles between these four lines. 
+
+    \section{Projective Transformations}
+
+    A \textit{projective transformation} is any transformation that preserves the cross ratio. Specifically:
+
+    \begin{definition}[Projective Transformations]
+        A projective map $f$ is defined as a function $f:\mathcal{C}_1 \to \mathcal{C}_2$ (where $\mathcal{C}_1$ and $\mathcal{C}_2$ are both conics, lines or pencils of lines) such that for any 4 points $A, B, C, D \in \mathcal{C}_1$, \[(A, B; C, D) = (f(A), f(B); f(C), f(D))\]
+    \end{definition}
+
+    There are two useful results that would come in handy.
+
+    \begin{theorem}[Projective Compositions]
+        The composition $f \circ g$ of two projective functions $f$ and $g$ is projective.
+    \end{theorem}
+
+    \begin{theorem}[Inverse of a Projective Map]
+        The inverse $f^{-1}$ of a projective map $f$ is also projective.
+    \end{theorem}
+
+    
+
+    We give a few examples of common projective transformations below. These are taken from \href{https://artofproblemsolving.com/community/c473124h1763266_moving_points_tutorial}{this blog post}.
+
+
+    \subsection{Common Projective Transformations}
+    \subsubsection{Projection from a line to a pencil of lines}
+    \subsubsection{Projection from a line to another line}
+    \subsubsection{Reflection across a line}
+    \subsubsection{Projection from a conic to a pencil of lines}
+    \subsubsection{Projection from a conic to points on that same conic}
+    \subsubsection{Inversion}
+
+    \section{The Method}
+    The essence of the method of moving points boils down to one important theorem:
+    \begin{theorem}
+        hello
+    \end{theorem}
+
+    
+\end{document}
