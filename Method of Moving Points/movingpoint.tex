@@ -86,15 +86,23 @@
         A projective map $f$ is defined as a function $f:\mathcal{C}_1 \to \mathcal{C}_2$ (where $\mathcal{C}_1$ and $\mathcal{C}_2$ are both conics, lines or pencils of lines) such that for any 4 points $A, B, C, D \in \mathcal{C}_1$, \[(A, B; C, D) = (f(A), f(B); f(C), f(D))\]
     \end{definition}
 
-    There are two useful results that would come in handy.
+    Notice that a projective map is bijective. Now, here are two results that would come in handy.
 
     \begin{theorem}[Projective Compositions]
         The composition $f \circ g$ of two projective functions $f$ and $g$ is projective.
     \end{theorem}
 
+    \begin{proof}
+        \[(A, B; C, D) = (g(A), g(B); g(C), g(D)) = (f \circ g(A), f \circ g(B); f \circ g(C), f \circ g(D))\]
+    \end{proof}
+
     \begin{theorem}[Inverse of a Projective Map]
         The inverse $f^{-1}$ of a projective map $f$ is also projective.
     \end{theorem}
+
+    \begin{proof}
+        \[(f(A), f(B); f(C), f(D)) = (A, B; C, D) = (f^{-1}f(A), f^{-1}f(B); f^{-1}f(C), f^{-1}f(D))\]
+    \end{proof}
 
     
 
@@ -103,17 +111,45 @@
 
     \subsection{Common Projective Transformations}
     \subsubsection{Projection from a line to a pencil of lines}
+    Given a line $l$ and a point $P$ not on $l$, we can project every point $Q$ on $l$ to the line $PQ$. This is a projective map, as \[(A, B; C, D) = (PA, PB; PC, PD)\] Where $PA, PB, PC, PD$ are lines going through $P$.  
+
     \subsubsection{Projection from a line to another line}
+    To project a line $l_1$ to another line $l_2$, we take a point $P$ not on either line. We will first project $l_1$ onto the pencil of lines going through $P$, then project this pencil onto $l_2$. This gives the desired effect.
+
+    \subsubsection{Rotating a pencil of lines}
+    This is a projective map as the cross ratio of a pencil of lines only depend on the angle between them.
+
     \subsubsection{Reflection across a line}
+    This is true by symmetry: imagine four points $A, B, C, D$. When we reflect them across any arbitrary line $l$, The distances between them (in the case they are points) or the angle between them (in in case they are lines) stays fixed.
+
     \subsubsection{Projection from a conic to a pencil of lines}
+
+    Consider a conic $\gamma$. We take a point $P \in \gamma$, and for every other point $Q \in \gamma, Q \not= P$, we will project $Q$ onto the line $PQ$. 
+
     \subsubsection{Projection from a conic to points on that same conic}
+    Consider the conic $\gamma$ once again. Now we will take a point $P$ not on the conic. For every point $Q$ on the conic, we will project $Q$ to $PQ \cap \gamma$ different from $Q$ (Unless $PQ$ is a tangent, in which case $Q$ gets mapped to itself).
+
     \subsubsection{Inversion}
+    It turns out, interestingly, Inversion also preserves the cross ratio. Therefore inversion is actually also a type of projective transformation.
+    \begin{proof}
+        Consider an inversion about a circle with radius $r$ and center $O$. By the distance formula: \[A'B' = \frac{r^2}{OA \cdot OB} \cdot AB\]
+        Now we have: 
+        \[(A', B'; C', D') = \frac{A'C' \cdot B'D'}{B'C' \cdot A'D'} = \frac{\frac{r^4}{OA \cdot OB \cdot OC \cdot OD} \cdot AC \cdot BD}{\frac{r^4}{OA \cdot OB \cdot OC \cdot OD} \cdot BC \cdot AD} = \frac{AC \cdot BD}{BC \cdot AD} = (A, B; C, D)\]
+    \end{proof}
 
     \section{The Method}
     The essence of the method of moving points boils down to one important theorem:
     \begin{theorem}
-        hello
+        If $f, g: \mathcal{C}_1 \to \mathcal{C}_2$ are projective, then $f \equiv g$ iff $f(A)=g(A)$ for at least 3 different values of A. 
     \end{theorem}
+
+    \begin{proof}
+        Necessity is simple. Now for sufficiency: consider 3 points $A, B, C$ such that $f=g$ on these three points. Consider another point $X \in \mathcal{C}_1/_{\{A, B, C\}}$ Then we see: 
+        \[(f(A), f(b); f(C), f(X)) = (A, B; C, X) = (g(A), g(B); g(C), g(X)) = (f(A), f(b); f(C), g(X))\]
+        Which is enough to conclude $f(X) = g(X)$. 
+    \end{proof}
+
+    So now to solve a given geometry problem, If we can find two projective maps $f$ and $g$, such that $f$ is equivalent to the condition given by the problem, and $g$ is equivalent to the result we want to prove, then we only need to check 3 special values of a moving point where $f=g$. If we can do that, then by the above theorem we would've proved that $f \equiv g$ and in fact we would be done.
 
     \section{Example Problems}
     These problems are sourced from \href{https://artofproblemsolving.com/community/c473124h1763266_moving_points_tutorial}{here} and \href{https://static1.squarespace.com/static/5fe101b108d85d5e817a934a/t/62b49688bfd3de63fa3c131b/1656002210249/The_Method_of_Moving_Points_Norra_Real.pdf}{here}.
