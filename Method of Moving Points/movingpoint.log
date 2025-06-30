@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.20)  1 JUL 2025 00:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.20)  1 JUL 2025 01:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -822,23 +822,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 158--160
 Package mdframed Info: Not enough space on this page on input line 160.
 [3]
 Package mdframed Info: Not enough space on this page on input line 160.
- [4] (./movingpoint.aux)
+<Diagram.png, id=93, 875.27pt x 749.80125pt>
+File: Diagram.png Graphic file (type png)
+<use Diagram.png>
+Package pdftex.def Info: Diagram.png  used on input line 163.
+(pdftex.def)             Requested size: 262.58302pt x 224.94211pt.
+ [4 <./Diagram.png>] (./movingpoint.aux)
 Package rerunfilecheck Info: File `movingpoint.out' has not changed.
-(rerunfilecheck)             Checksum: D30FDCA4AC7E85DF722F072DAE50A80D;2602.
+(rerunfilecheck)             Checksum: F3BBCEAFFB58CF6C9D9E7D835804C1A9;2597.
  ) 
 Here is how much of TeX's memory you used:
- 34917 strings out of 476025
- 829741 string characters out of 5790017
+ 34925 strings out of 476025
+ 829853 string characters out of 5790017
  1865388 words of memory out of 5000000
- 54783 multiletter control sequences out of 15000+600000
+ 54789 multiletter control sequences out of 15000+600000
  525407 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,6n,103p,789b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on movingpoint.pdf (4 pages, 154284 bytes).
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on movingpoint.pdf (4 pages, 222501 bytes).
 PDF statistics:
- 157 PDF objects out of 1000 (max. 8388607)
- 125 compressed objects within 2 object streams
+ 164 PDF objects out of 1000 (max. 8388607)
+ 128 compressed objects within 2 object streams
  24 named destinations out of 1000 (max. 500000)
- 117 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 122 words of extra memory for PDF output out of 10000 (max. 10000000)
 
