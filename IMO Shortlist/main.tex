@@ -85,6 +85,38 @@
 
     \subsection{ISL 2020}
 
+    \begin{problem}[2020 A3]
+        Suppose that $a,b,c,d$ are positive real numbers satisfying $(a+c)(b+d)=ac+bd$. Find the smallest possible value of
+        \[ \frac{a}{b}+\frac{b}{c}+\frac{c}{d}+\frac{d}{a}. \]
+    \end{problem}
+
+    \begin{proof}
+        \begin{align*}
+            \frac{a}{b} + \frac{d}{c} &= \frac{ac + bd}{bc}\\
+            \frac{b}{c} + \frac{a}{d} &= \frac{ac + bd}{cd}\\
+            \frac{c}{d} + \frac{b}{a} &= \frac{ac + bd}{ad}\\
+            \frac{d}{a} + \frac{c}{b} &= \frac{ac + bd}{ab}\\
+        \end{align*}
+
+        Summing the 4 expressions gives:
+
+        \begin{align*}
+            \left(\frac{a}{b}+\frac{b}{c}+\frac{c}{d}+\frac{d}{a}\right) + \left(\frac{b}{a}+\frac{c}{b}+\frac{d}{c}+\frac{a}{d}\right) &= (ac + bd)\left(\frac{1}{bc} + \frac{1}{cd} + \frac{1}{ad} + \frac{1}{ab}\right)\\
+            &= (a+c)(b+d)\left(\frac{1}{bc} + \frac{1}{cd} + \frac{1}{ad} + \frac{1}{ab}\right)\\
+            &= (ab + ad + bc + cd)\left(\frac{1}{bc} + \frac{1}{cd} + \frac{1}{ad} + \frac{1}{ab}\right)\\
+            &\geq 16
+        \end{align*}
+
+        Where the last inequality is by Cauchy-Schwarz. Let $x = \frac{a}{b}, y = \frac{b}{c}, z = \frac{c}{d}, w = \frac{d}{a}$. So we have $xyzw = 1$ and
+        \[(x + y + z + w) + \left(\frac{1}{x} + \frac{1}{y} + \frac{1}{z} + \frac{1}{w}\right) \geq 16\]
+        \[\displaystyle\sum_{cyc}\left(x + \frac{1}{x} - 2\right) = \displaystyle\sum_{cyc}\left(\frac{{(x-1)}^2}{x}\right) = \displaystyle\sum_{cyc}x\left(1 - \frac{1}{x}\right)^2 \geq 8\]
+        Finally, notice that 
+        \[x + y + z + w \geq \displaystyle\sum_{cyc}x\left(1 - \frac{1}{x}\right)^2 \geq 8\]
+
+        Finally, we can take $(a, b, c, d) = (1, 2 + \sqrt{3}, 1, 2+\sqrt{3})$ to achieve equality.
+        
+    \end{proof}
+
     \begin{problem}[2020 C2]
         In a regular 100-gon, 41 vertices are colored black and the remaining 59 vertices are colored white. Prove that there exist 24 convex quadrilaterals $Q_1, \ldots, Q_{24}$ whose corners are vertices of the 100-gon, so that
         \begin{itemize}

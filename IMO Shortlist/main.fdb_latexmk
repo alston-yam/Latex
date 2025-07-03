@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1751453261 "/Users/alstonhome/Documents/Coding/Latex/IMO Shortlist/main.tex" "main.pdf" "main" 1751453263 0
-  "/Users/alstonhome/Documents/Coding/Latex/IMO Shortlist/main.tex" 1751453261 13038 c1326da11ad5c44a4f516f1fa0cf1fbf ""
+["pdflatex"] 1751513760 "/Users/alstonhome/Documents/Coding/Latex/IMO Shortlist/main.tex" "main.pdf" "main" 1751513762 0
+  "/Users/alstonhome/Documents/Coding/Latex/IMO Shortlist/main.tex" 1751513759 14819 b2f34e0290b78c25d0fff560dae39074 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -42,6 +42,7 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1136768653 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1248133631 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1248133631 32080 340ef9bf63678554ee606688e7b5339d ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1248133631 30251 6afa5cb1d0204815a708a080681d4674 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1248133631 36281 c355509802a035cadc5f15869451dcee ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
@@ -224,8 +225,8 @@
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
   "2019 G4.png" 1751159792 117088 78b1212ebb82a29c3063cc3576d1d3f5 ""
   "2019_G4_2.png" 1751170887 115459 076d64a444ac5996a78d7858b98a3b5f ""
-  "main.aux" 1751453263 667 92a78eab9702b3f2daf7525ddcfcf9c1 "pdflatex"
-  "main.tex" 1751453261 13038 c1326da11ad5c44a4f516f1fa0cf1fbf ""
+  "main.aux" 1751513762 667 f35acb5784c88598dca812927363dc57 "pdflatex"
+  "main.tex" 1751513759 14819 b2f34e0290b78c25d0fff560dae39074 ""
   (generated)
   "main.aux"
   "main.log"
