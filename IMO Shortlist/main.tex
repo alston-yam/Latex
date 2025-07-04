@@ -1,4 +1,4 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass{article}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -95,6 +95,8 @@
         Substituting $n=2022$ and $n=2021$ into the above eqeuation, we get that $b_{2021} < 0$ and also $b_{2023} < 0$ respectively. As a result, considering $n=2021$ in the first equation gives us a contradiction, and we're done.
     \end{proof}
 
+    \pagebreak
+
     \subsection{ISL 2020}
 
     \begin{problem}[2020 A3]
@@ -142,6 +144,42 @@
     
     \textcolor{red}{Lemma:} 
     \end{proof}
+
+    \begin{problem}[2020 N5]
+        Determine all functions $f$ defined on the set of all positive integers and taking non-negative integer values, satisfying the three conditions:
+        \begin{itemize}
+        \item $(i)$ $f(n) \neq 0$ for at least one $n$;
+        \item $(ii)$ $f(x y)=f(x)+f(y)$ for every positive integers $x$ and $y$;
+        \item $(iii)$ there are infinitely many positive integers $n$ such that $f(k)=f(n-k)$ for all $k<n$.
+        \end{itemize}
+    \end{problem}
+
+    \begin{proof}
+        I claim that the answers are $f(n) = f(p)v_p(n)$ for some prime $p$. We can verify that this satisfies all 3 conditions, specifically for iii, we can pick $n$ to be all powers of $p$.
+
+        Now we prove that these are the only set of solutions. First notice that: \[P(1, 1) \implies f(1) = f(1) + f(1) \implies f(1) = 0\]
+
+        By condition (i) we have that there exists a prime $p$ with $f(p) > 0$. Let $p$ be the minimal such prime. Call an integer $n$ \textit{good} if $n$ satisfies condition (iii).
+
+        \textcolor{red}{Claim 1:} If $n$ is good, then any divisor of $n$ is also good.
+        Let $d'$ = $n/d$. So we have \[f(k) + f(d') = f(kd') = f(n - kd') = f(dd' - kd) = f(d'(d - k)) = f(d') + f(d-k)\]
+        From which we deduce $f(d) = f(d-k)$, so $d$ is also good.
+
+        \textcolor{red}{Claim 2:} All good numberes are of the form $n = p^km$ for some $m \leq p-1$. 
+        Suppose not. Let's write a good number $n = p^k (qp + r)$. \[0 = f(r) = f(qp) = f(q) + f(p) > 0\] Which is a contradiction (second step comes from the fact that $(qp + r) \mid n$). 
+
+        Here it's easy to see that all powers of $p$ are good, as we just take a sufficiently large $n$ with a large $p$ power. 
+
+        \textcolor{red}{Claim 3:} For every prime $q \not= p$, we have $f(q) = 0$. 
+        
+        We can prove this via FLT. Write $p^{q-1} = qm + 1$, so we know that $p^{q-1}$ is good, therefore \[0 = f(1)= f(qm) = f(m) + f(q)\]
+        Which is enough to imply that $f(q) = 0$.
+
+        Now we have that $f(n) = 0$ for any $n$ coprime to $p$. So we consider an $n = p^{v_p{(n)}}m$, we have
+        \[f(n) = f(m) + f(p^{v_p{(n)}}) = k\cdot v_p(n)\] for some $k$, as desired.
+    \end{proof}
+
+    \pagebreak
 
     \subsection{ISL 2019}
 
@@ -221,7 +259,8 @@
         This works as $b_i \in S$ $\forall i$ since $b_i < m$. Finally, notice that $m$ must be a root to the above polynomial, and so $m \in S$, and we're done.
     \end{proof}
 
-    
+    \pagebreak
+
     \subsection{ISL 2017}
     \begin{problem}[2017 A4]
         A sequence of real numbers $a_1,a_2,\ldots$ satisfies the relation
