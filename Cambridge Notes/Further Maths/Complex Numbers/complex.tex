@@ -17,7 +17,6 @@
 \usepackage{psfrag}
 \usepackage{pgfplots}
 \usepackage{bm}
-\usepackage{mhchem}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Other Settings
@@ -55,63 +54,41 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{9701 CAIE Chemistry — Chromatography}
+\title{9231 CAIE Further Math — Complex Numbers}
 \author{Alston}
 \date{}
-\parskip=5pt
 \parindent=0pt
+\parskip=5pt
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
     \maketitle
 
-    \section{Introduction}
-    Notes for chromatography in the 9701 Chemistry course.
+    \section{Summations}
+    We use De Moivre's Theorem to get $z^n = cis(n\theta)$ and also $\frac{1}{z^n} = z^{-n} = cis(-n\theta) = \cos(n\theta) - i\sin(n\theta)$. Then, we can sum or subtract these two statements to get:
+
+    \begin{theorem}[Formulae]
+        \[z^n + \frac{1}{z^n} = 2\cos(n\theta)\]
+        \[z^n - \frac{1}{z^{n}} = 2i\sin(n\theta)\]
+    \end{theorem}
+
+    Now, for evaluating things such as $\int\cos^4(\theta)$, just use the formula for $n=1$ first, then raise it to the 4th power. Expand the bracket in $z$, and then group the $z^n$ terms. 
+
+    \[\cos^4(\theta) = (z + \frac{1}{z})^4 = z^4 + 4z^2 + 6 + 4z^{-2} + z^{-4} = 2\cos(4\theta) + 8\cos(2\theta) + 6\]
+
+    \subsection{Summation of Trig Functions}
+    If it's a summation in cos, realise that you can turn it into the REAL parts of the summation of a sequence in $z$, which is very easy to calculate as a geometric series. Then turn it back to $z = cis(\theta)$ or $z = e^{i\theta}$ and get the real part. Similarly for summation in $\sin$.
+
+    \begin{problem}
+        Determine the value of $\displaystyle\sum_{n=0}^{\infty}2^{-n}\sin\left(\frac{n\pi}{2}\right)$
+    \end{problem}
+
+    Consider the series $\displaystyle\sum_{n = 0}^{\infty}\left(\frac{z}{2}\right)^n$. We actually just want the real part of this series, evaluated at $\theta = \frac{\pi}{2}$. 
+
+    \[\displaystyle\sum_{n = 0}^{\infty}\left(\frac{z}{2}\right)^n = 1 + \frac{z}{2} + \frac{z^2}{4} \cdots = \frac{1}{1 - \frac{z}{2}} = \frac{2}{2 - z}\]
+
+    Now, let $z = e^{i\theta}$, $\frac{2}{2 - z} = \frac{2}{2 - e^{i\theta}}$. Multiply top and bottom by $2 - e^{-i\theta}$ and we have $\frac{2}{2 - z} = \frac{4 - 2e^{-i\theta}}{5 - 4\cos{\theta}}$. Im$\left(\frac{4 - 2e^{-i\theta}}{5 - 4\cos{\theta}}\right) = \frac{2\sin{\theta}}{5 - 4\cos{\theta}}$, so just substitute $\theta = \frac{\pi}{2}$ to get the answer.
 
 
-    $\textbf{Mobile Phase}$: The solvent.
-
-    $\textbf{Stationary Phase}$: The thing not moving that the mobile phase passes through. 
-
-    $\textbf{Partition (Coefficient)}$: Separation due to $\textbf{solubility}$ of solute between the mobile phase and the stationary phase.
-
-    
-    \section{Paper Chromatography}
-
-    The mixture is separated by partition. The difference in solubility of the compound in the mobile and stationary phase leads to the separation.
-
-    Consider the $R_f$: retardation factor
-
-    \[R_f = \frac{\text{Distance travelled by solute}}{\text{Total distance from baseline to solvent front}}\]
-
-    Different substances would have different $R_f$ values and you can just check your experimental data with known values.
-
-    \subsection{Two Way Chromatography}
-    If you go up one way and the solutes aren't that separated, turn the paper 90 degrees and do the thing again with a different solvent.
-
-    
-    \section{Thin-layer Chromatography (TLC)}
-    Now the stationary phase is not a sheet of paper, but it's a solid. Normally it's $\ce{Al2O3}$ or $\ce{SiO2}$
-
-    The mobile phase passes OVER the stationary phase, and the solid $\textbf{absorbs}$ molecules of the compound. So if both the molecule and the solid are polar, they would attract more strongly and so the molecule would travel less.
-
-
-    \section{Gas Liquid Chromatography (GLC)}
-    \begin{center}
-        \includegraphics[width=250pt]{Capture-2025-08-26-104432.png}
-    \end{center}
-
-    Vaporised sample is carried by an inert gas (mobile phase) over the stationary phase (silica or aluminium powder).
-
-    A non-polar stationary phase means that travel time is mainly determined by volatility, a polar stationary phase means polar molecules will be slowed down (so polarity also is a factor).
-    
-    GLC is used to determine $\textbf{\% composition}$ of a compound. The percentage is the ratio of a particular triangular peak in relation to the total area of all triangles.
-
-    \section{Summary}
-    Paper chromatography works by partition.
-
-    TLC works by absorption.
-    
-    GLC works by partition.
     
 \end{document}

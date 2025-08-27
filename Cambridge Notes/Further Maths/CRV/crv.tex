@@ -17,7 +17,6 @@
 \usepackage{psfrag}
 \usepackage{pgfplots}
 \usepackage{bm}
-\usepackage{mhchem}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Other Settings
@@ -55,63 +54,40 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{9701 CAIE Chemistry — Chromatography}
+\title{9231 CAIE Further Maths Stats — CRV }
 \author{Alston}
 \date{}
-\parskip=5pt
 \parindent=0pt
+\parskip=5pt
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
     \maketitle
-
-    \section{Introduction}
-    Notes for chromatography in the 9701 Chemistry course.
-
-
-    $\textbf{Mobile Phase}$: The solvent.
-
-    $\textbf{Stationary Phase}$: The thing not moving that the mobile phase passes through. 
-
-    $\textbf{Partition (Coefficient)}$: Separation due to $\textbf{solubility}$ of solute between the mobile phase and the stationary phase.
-
     
-    \section{Paper Chromatography}
+    \section{Basic Stuff}
+    To get to the CDF, you would integrate the PDF.
 
-    The mixture is separated by partition. The difference in solubility of the compound in the mobile and stationary phase leads to the separation.
 
-    Consider the $R_f$: retardation factor
-
-    \[R_f = \frac{\text{Distance travelled by solute}}{\text{Total distance from baseline to solvent front}}\]
-
-    Different substances would have different $R_f$ values and you can just check your experimental data with known values.
-
-    \subsection{Two Way Chromatography}
-    If you go up one way and the solutes aren't that separated, turn the paper 90 degrees and do the thing again with a different solvent.
-
+    \section{Calculating Expected Value for a CRV}
     
-    \section{Thin-layer Chromatography (TLC)}
-    Now the stationary phase is not a sheet of paper, but it's a solid. Normally it's $\ce{Al2O3}$ or $\ce{SiO2}$
+    \begin{theorem}
+    \[E(X) = \displaystyle\int_{\forall x} xf(x) dx\]
+    \[E(g(X)) = \displaystyle\int_{\forall x} g(x)f(x) dx\]    
+    \end{theorem}
 
-    The mobile phase passes OVER the stationary phase, and the solid $\textbf{absorbs}$ molecules of the compound. So if both the molecule and the solid are polar, they would attract more strongly and so the molecule would travel less.
+    This is just the occurance $\times$ the probability of occuring.
 
+    \section{Changing Variables}
 
-    \section{Gas Liquid Chromatography (GLC)}
-    \begin{center}
-        \includegraphics[width=250pt]{Capture-2025-08-26-104432.png}
-    \end{center}
+    To go from one PDF to another, you must go through the route that is the CDF.
 
-    Vaporised sample is carried by an inert gas (mobile phase) over the stationary phase (silica or aluminium powder).
+    \begin{theorem}
+        \[f(x) \implies F(Y) \implies G(Y) \implies g(y)\]
+    \end{theorem}
 
-    A non-polar stationary phase means that travel time is mainly determined by volatility, a polar stationary phase means polar molecules will be slowed down (so polarity also is a factor).
-    
-    GLC is used to determine $\textbf{\% composition}$ of a compound. The percentage is the ratio of a particular triangular peak in relation to the total area of all triangles.
+    In other words, we have
+    \[P(Y \leq y) = P(H(X) \leq y) = P(X \leq H^{-1}(y))\]
 
-    \section{Summary}
-    Paper chromatography works by partition.
+    So we just need to undo the function that is applied to the $X$. Special care needs to be taken when handling domains. If we have $a \leq x \leq b$, then we would have $a \leq H^{-1}(y) \leq b$. Then you undo. 
 
-    TLC works by absorption.
-    
-    GLC works by partition.
-    
 \end{document}

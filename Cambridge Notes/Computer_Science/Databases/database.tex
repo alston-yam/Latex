@@ -17,7 +17,6 @@
 \usepackage{psfrag}
 \usepackage{pgfplots}
 \usepackage{bm}
-\usepackage{mhchem}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Other Settings
@@ -55,63 +54,45 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{9701 CAIE Chemistry — Chromatography}
+\title{9618 CAIE Computer Science — Databases}
 \author{Alston}
 \date{}
-\parskip=5pt
 \parindent=0pt
+\parskip=5pt
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
     \maketitle
 
     \section{Introduction}
-    Notes for chromatography in the 9701 Chemistry course.
+    Database management system (DBMS): responds to queries by extracting information from the database.
 
-
-    $\textbf{Mobile Phase}$: The solvent.
-
-    $\textbf{Stationary Phase}$: The thing not moving that the mobile phase passes through. 
-
-    $\textbf{Partition (Coefficient)}$: Separation due to $\textbf{solubility}$ of solute between the mobile phase and the stationary phase.
-
+    \subsection{Terminology}
     
-    \section{Paper Chromatography}
+    $\textbf{Record:}$ Storage representation of a row of data
 
-    The mixture is separated by partition. The difference in solubility of the compound in the mobile and stationary phase leads to the separation.
+    $\textbf{Tuple:}$ Specifically in a relational database, tuple is one row of data.
 
-    Consider the $R_f$: retardation factor
+    $\textbf{Field/Attribute:}$ Field is a column, attribute is a characteristic that describes an entry in the database.
 
-    \[R_f = \frac{\text{Distance travelled by solute}}{\text{Total distance from baseline to solvent front}}\]
+    $\textbf{Primary key:}$ An attribute in the table that uniquely identifies an entry in that table.
 
-    Different substances would have different $R_f$ values and you can just check your experimental data with known values.
-
-    \subsection{Two Way Chromatography}
-    If you go up one way and the solutes aren't that separated, turn the paper 90 degrees and do the thing again with a different solvent.
-
+    $\textbf{Foreign key:}$ An attribute in a table that is the primary key of another table.
     
-    \section{Thin-layer Chromatography (TLC)}
-    Now the stationary phase is not a sheet of paper, but it's a solid. Normally it's $\ce{Al2O3}$ or $\ce{SiO2}$
+    $\textbf{Compound key:}$ Like an composite key (needs 2+ fields), but it's a combination of $\textbf{foreign keys}$ in a table that uniquely identifies a row.
 
-    The mobile phase passes OVER the stationary phase, and the solid $\textbf{absorbs}$ molecules of the compound. So if both the molecule and the solid are polar, they would attract more strongly and so the molecule would travel less.
+    \section{Relational Database vs File Based Systems}
+
+    File based systems store all data in one singular table. This leads to $\textbf{redundancies}$ in data, as the same thing might appear in multiple entries of the database. Thus this means there's a waste of space, as well as wasting time to edit these duplicate data.
+
+    The solution is a relational database. Here there are MULTIPLE tables in the database, and they have relationships. These tables are linked by $\textbf{primary keys}$ and $\textbf{foreign keys}$.
 
 
-    \section{Gas Liquid Chromatography (GLC)}
-    \begin{center}
-        \includegraphics[width=250pt]{Capture-2025-08-26-104432.png}
-    \end{center}
 
-    Vaporised sample is carried by an inert gas (mobile phase) over the stationary phase (silica or aluminium powder).
 
-    A non-polar stationary phase means that travel time is mainly determined by volatility, a polar stationary phase means polar molecules will be slowed down (so polarity also is a factor).
-    
-    GLC is used to determine $\textbf{\% composition}$ of a compound. The percentage is the ratio of a particular triangular peak in relation to the total area of all triangles.
 
-    \section{Summary}
-    Paper chromatography works by partition.
 
-    TLC works by absorption.
-    
-    GLC works by partition.
+
+
     
 \end{document}
