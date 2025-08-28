@@ -1,0 +1,177 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{empheq}
+\usepackage{mdframed}
+\usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{psfrag}
+\usepackage{pgfplots}
+\usepackage{bm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Other Settings
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\geometry{a4paper}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define some useful colors %%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{ocre}{RGB}{243,102,25}
+\definecolor{mygray}{RGB}{243,243,244}
+\definecolor{deepGreen}{RGB}{26,111,0}
+\definecolor{shallowGreen}{RGB}{235,255,255}
+\definecolor{deepBlue}{RGB}{61,124,222}
+\definecolor{shallowBlue}{RGB}{235,249,255}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define an orangebox command %%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\orangebox[1]{\fcolorbox{ocre}{mygray}{\hspace{1em}#1\hspace{1em}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% English Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheoremstyle{mytheoremstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\newtheoremstyle{myproblemstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowGreen,linecolor=deepGreen,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{theorem}{Theorem}[section]
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowBlue,linecolor=deepBlue,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{definition}{Definition}[section]
+\theoremstyle{myproblemstyle}
+\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{problem}{Problem}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Plotting Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepgfplotslibrary{colorbrewer}
+\pgfplotsset{width=8cm,compat=1.9}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{9231 CAIE Further Maths Stats — Inferential Statistics}
+\author{Alston}
+\date{}
+\parskip=5pt
+\parindent=0pt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+    \maketitle
+
+    \section{t-distribution}
+    Used to model data (variance) about a population when the sample size is small (when the sample is not big enough to use normal). Generally it's when $n < 30$.
+
+    To use the t-distribution, you must have: 
+
+    \begin{itemize}
+        \item Underlying normal distribution assumed
+        \item Variance of parent distribution is unknown
+        \item Small sample size
+    \end{itemize}
+
+    The unbiased estimator is the same: 
+
+    \begin{definition}[Unbiased Estimator]
+        \[s^2 = \frac{1}{n-1}\left(\displaystyle\sum x^2 - \frac{(\sum x)^2}{n}\right) = \frac{1}{n-1}\left(\displaystyle\sum x^2 - n\bar{x}^2\right)\]
+    \end{definition}
+
+    And we also have the test stat: 
+    \begin{definition}[Test Statistic]
+
+        \[t = \frac{x - \mu}{\frac{s}{\sqrt{n}}}\]
+        
+    \end{definition}
+
+    Note that here in the denominator we are dividing by the $\textbf{standard error of the mean}$. This comes from $Var(\bar{X}) = Var\left(\frac{X_1 + X_2 + \cdots + X_n}{n}\right) = \frac{1}{n^2} Var(X_1 + X_2 + \cdots + X_n) = \frac{1}{n^2} \times n \times Var(X) = \frac{s^2}{n}$.
+
+    And then we are just dividing by $\sqrt{Var(\bar{X})}$.
+
+
+    \section{Difference in Means}
+
+    Here, we have assumptions
+
+    \begin{itemize}
+        \item Two independent distributions
+        \item Same population variance across them
+        \item Normal underlying distributions
+        \item Each sample size are sufficiently large enough
+    \end{itemize}
+
+    So when we are testing for the difference in means, we are just combining the two sample mean distributions. So if we take $\bar{X} - \bar{Y}$, their mean will be the difference, and the variance of the resultant distribution will be the sum of the variences of $\bar{X}$ and $\bar{Y}$. 
+
+    \begin{definition}[Z Value]
+
+        \[Z = \frac{(\bar{X} - \bar{Y}) - (\mu_x - \mu_y)}{\sqrt{\frac{s_x^2}{n_x} + \frac{s_y^2}{n_y}}}\]
+        
+    \end{definition}
+
+    Note that here, often we have $\mu_x - \mu_y = 0$ as a result of the $H_0$. And note here that we use sample variation here, but the theoretical test statistic would have $\sigma_x^2$ and $\sigma_y^2$.
+
+
+    \subsection{Small sample sizes}
+    If $n < 15$, we would need to pool our variances into one variance. 
+
+    So we are literally just taking all the data from both samples, and treat as if they are from one sample when calculating the variance. 
+
+    But furthermore, if you know the unbiased estimator of the variance for both samples you can change up the formula. Originally it's this: 
+
+    \[s_p^2 = \frac{\sum(x - \bar{x})^2 + \sum(y - \bar{y})^2}{n_x + n_y - 2}\]
+
+    But if we know $s_x^2 = \frac{\sum(x - \bar{x})^2}{n_x - 1}$ and likewise for $y$, then we have
+
+    \[s_p^2 = \frac{(n_x-1)s_x^2 - (n_y-1)s_y^2}{n_x + n_y - 2}\]
+
+    And so unlike in section 2, we will use t-distribution here due to a small sample size. Remember to change up your degree of freedom with how many parameters you've estimated! If we make the assumption that the underlying variances for the two population samples are the same, we can change the denominator of the test statistic to $\sqrt{s_p^2 \left(\frac{1}{n_x} + \frac{1}{n_y}\right)}$
+
+    \section{Paired t-tests}
+    A paired t-test looks for the changes in each entry before and after an action is performed on it.
+    
+    \begin{definition}[Test Statistic]
+        $$t = \frac{\bar{d} - k}{\frac{s_d}{\sqrt{n}}}$$
+    \end{definition}
+
+    $\bar{d}$ is just the mean of the differences. $H_0$ assumes that the mean is $k$. Normally this would be equal to 0. Finally, the bottom is the standard deviation of the distribution (normal) of the differences. 
+
+    \section{Confidence Intervals}
+    
+
+    This can be thought of as just the acceptance region of the test. We assess whether the CI actually contains the population mean. Here, if $n$ is small, we will use the t-distribution.
+
+    \begin{definition}[Confidence Intervals]
+
+        \[\bar{x} \pm t_{\frac{\alpha}{2}, n-1} \frac{s}{\sqrt{n}}\]
+        
+    \end{definition}
+
+    The $\frac{s}{\sqrt{n}}$ term is actually just the standard error of the mean. Then the $t$ value is just the value read from the table. the $\frac{\alpha}{2}$ is the percentage of the confidence interval. So if we want a 90\% confidence interval, that leaves 5\% on both sides, so we would want the $t$ value at 95\%.
+
+    \section{Confidence Interval for Difference in Means}
+
+    This is just part 2, converted to a confidence interval. We need the assumption that $n$ is large enough $n \geq 30$, so here we will use the $z$ score. 
+
+    \begin{definition}[Confidence interval, difference in means]
+
+        \[\bar{x} - \bar{y} \pm z_{\frac{\alpha}{2}} \sqrt{\frac{s_x^2}{n_x} + \frac{s_y^2}{n_y}}\]
+        
+    \end{definition}
+
+    \subsection{Pooled Variance}
+
+    If $n < 30$, we would need to pool the data from both samples for the variance. 
+
+    \begin{definition}[CI for small samples]
+
+        \[(\bar{x} - \bar{y}) \pm t_{\frac{\alpha}{2}, n_x + n_y - 2} \times s_p \sqrt{\frac{1}{n_x} + \frac{1}{n_y}}\]
+        
+    \end{definition}
+
+    
+
+\end{document}
