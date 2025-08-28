@@ -1,0 +1,148 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{empheq}
+\usepackage{mdframed}
+\usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{psfrag}
+\usepackage{pgfplots}
+\usepackage{bm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Other Settings
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\geometry{a4paper}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define some useful colors %%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{ocre}{RGB}{243,102,25}
+\definecolor{mygray}{RGB}{243,243,244}
+\definecolor{deepGreen}{RGB}{26,111,0}
+\definecolor{shallowGreen}{RGB}{235,255,255}
+\definecolor{deepBlue}{RGB}{61,124,222}
+\definecolor{shallowBlue}{RGB}{235,249,255}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define an orangebox command %%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\orangebox[1]{\fcolorbox{ocre}{mygray}{\hspace{1em}#1\hspace{1em}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% English Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheoremstyle{mytheoremstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\newtheoremstyle{myproblemstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowGreen,linecolor=deepGreen,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{theorem}{Theorem}[section]
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowBlue,linecolor=deepBlue,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{definition}{Definition}[section]
+\theoremstyle{myproblemstyle}
+\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{problem}{Problem}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Plotting Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepgfplotslibrary{colorbrewer}
+\pgfplotsset{width=8cm,compat=1.9}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{9231 CAIE Further Maths — Non Parametric Tests}
+\author{Alston}
+\date{}
+\parskip=5pt
+\parindent=0pt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+    \maketitle
+
+    \section{Single Sample}
+
+    \subsection{Sign Test}
+
+    We test if the population median is larger/smaller/different than a given value. Use the sample, then find the signs of each data point w.r.t. to the median (are you larger or smaller)?
+
+    Count how many + and - there are, that's your test statistic. 
+
+    If the population has the suggested median, the distribution of + and - should be a $\textbf{binomial}$ with $p=0.5$. Test probability of $n$ values giving you a more extreme test statistic, and compare it to the significance level.
+
+    \subsubsection{Approximation}
+    You can approximate the binomial to a normal for $n > 10$, use continuity correction (+0.5 to the test stat).
+    \begin{theorem}[Normal approximation of sign rank test]
+
+        \[T \sim N\left(\frac{n}{2}, \frac{n}{4}\right)\]
+        
+    \end{theorem}
+
+    \subsection{Wilcoxon Signed-Rank Test}
+    Also tests for the median, but here we assume: 
+    \begin{itemize}
+        \item Underlying data are symmetric
+        \item Underlying data are continuous
+        \item Data are independent
+    \end{itemize}
+
+    \begin{definition}[Test Statistic]
+        \[T = \min(P, N)\]
+    \end{definition}
+
+    Where $P$ and $N$ are the sum of ranks for the positive and negative differences respectively. The smaller the test stat, the more extreme the data so we reject $H_0$. The tables give the $\textbf{largest}$ value of the test statistic where we $\textbf{reject}$ the $H_0$.
+
+    \subsubsection{Approximation}
+
+    You can also approximate this to a normal. (c.c. must be used, +0.5 to the test stat)!
+
+    \begin{theorem}
+        \[E(T) = \frac{n(n+1)}{4}\]
+        \[Var(T) = \frac{n(n+1)(2n+1)}{24}\]
+
+        So for large $n$:
+
+        \[T \sim N\left(\frac{n(n+1)}{4}, \frac{n(n+1)(2n+1)}{24}\right)\]
+    \end{theorem}
+
+    The derivation for the variance comes from thinking about a Bernoulli variable with probability $0.5$.
+
+    \section{Double Sample}
+
+    \subsection{Paired Sample Sign Test}
+    This is literally just the sign test in 1.1, but you're taking the difference of the two samples, and looking at the sign (negative or positive differences).
+
+    \subsection{Wilcoxon Matched Pairs Signed-Rank Test}
+    Underlying assumption is that the differences are $\textbf{continuous}$ and $\textbf{symmetric}$.
+
+    This is the same as section 1.2. But what we're doing here is that taking the difference of the matched pairs, and looking at if that difference is positive or negative.
+
+    \subsection{Wilcoxon Rank-Sum Test}
+
+    We do this test when we have two samples of different sizes. We first treat them as one big group and then rank their sizes. Then we sum the ranks of each individual group. 
+
+    We take the group with the smaller size, of sum $R_m$, and the take the test stat as
+
+    \begin{definition}[Test Statistic]
+        \[W = \min(R_m, m(m + n + 1) - R_m)\]
+    \end{definition}
+
+    These two options are just the two ways that the data can be ranked (largest to smallest vs smallest to largest).
+
+    \subsubsection{Approximation}
+    For large values $n \geq 10, m \geq 10$, we can approximate the rank-sum distribution to a normal again. Remember to use c.c (+0.5 to the test stat).
+
+    \begin{theorem}[Approximation of rank-sum to normal]
+
+        \[E(W) = \frac{m(n+m+1)}{2}\]
+        \[Var(W) = \frac{m(n+m+1)}{12}\]
+        
+    \end{theorem}
+
+
+    
+\end{document}
