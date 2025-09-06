@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.20)  6 SEP 2025 16:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.20)  29 AUG 2025 13:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/Users/alstonhome/Documents/Coding/Latex/Cambridge Notes/Computer_Science/Databases/database.tex"
-(/Users/alstonhome/Documents/Coding/Latex/Cambridge Notes/Computer_Science/Databases/database.tex
+**"/Users/alstonhome/Documents/Coding/Latex/NZQA Scholarships/Geography/Katie-GP.tex"
+(/Users/alstonhome/Documents/Coding/Latex/NZQA Scholarships/Geography/Katie-GP.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22> (/usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
@@ -615,23 +615,23 @@ LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 149.
 \c@theorem=\count328
 \c@definition=\count329
 \c@problem=\count330
- (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.colorbrewer.code.tex (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarycolorbrewer.code.tex)) (./database.aux)
-\openout1 = `database.aux'.
+ (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.colorbrewer.code.tex (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarycolorbrewer.code.tex)) (./Katie-GP.aux)
+\openout1 = `Katie-GP.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -690,66 +690,31 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 
 Package pgfplots notification 'compat/show suggested version=true': you might benefit from \pgfplotsset{compat=1.18} (current compat level: 1.9).
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 65.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 64.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 65.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 64.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Overfull \hbox (2.33083pt too wide) in paragraph at lines 82--83
-[]$[]$ \OT1/cmr/m/n/10 Like an com-pos-ite key (needs 2+ fields), but it's a com-bi-na-tion of $[]$
- []
-
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 91.
-[1
+) [1
 Non-PDF special ignored!
 <special> header=psfrag.pro
 
-{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-<image.png, id=15, 495.8525pt x 438.63875pt>
-File: image.png Graphic file (type png)
-<use image.png>
-Package pdftex.def Info: image.png  used on input line 107.
-(pdftex.def)             Requested size: 200.0pt x 176.92487pt.
- [2 <./image.png>]
-<Capture-2025-09-06-154943.png, id=21, 1296.845pt x 996.72375pt>
-File: Capture-2025-09-06-154943.png Graphic file (type png)
-<use Capture-2025-09-06-154943.png>
-Package pdftex.def Info: Capture-2025-09-06-154943.png  used on input line 151.
-(pdftex.def)             Requested size: 275.0pt x 211.35614pt.
-<Capture-2025-09-06-155844.png, id=22, 1148.29pt x 880.28876pt>
-File: Capture-2025-09-06-155844.png Graphic file (type png)
-<use Capture-2025-09-06-155844.png>
-Package pdftex.def Info: Capture-2025-09-06-155844.png  used on input line 156.
-(pdftex.def)             Requested size: 275.0pt x 210.81693pt.
-<image copy.png, id=23, 1152.305pt x 576.1525pt>
-File: image copy.png Graphic file (type png)
-<use image copy.png>
-Package pdftex.def Info: image copy.png  used on input line 157.
-(pdftex.def)             Requested size: 275.0pt x 137.49698pt.
- [3 <./Capture-2025-09-06-154943.png>]
-Overfull \hbox (5.96602pt too wide) in paragraph at lines 164--165
-[]\OT1/cmr/m/n/10 Also, when us-ing "IN-SERT INTO", the syn-tax is IN-SERT INTO ta-ble1 VAL-UES(value1, value2...) 
- []
-
-[4 <./Capture-2025-09-06-155844.png> <./image copy.png>] (./database.aux) ) 
+{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./Katie-GP.aux) ) 
 Here is how much of TeX's memory you used:
- 28826 strings out of 476025
- 736623 string characters out of 5790017
- 1861388 words of memory out of 5000000
- 48778 multiletter control sequences out of 15000+600000
- 525396 words of font info for 80 fonts, out of 8000000 for 9000
+ 28759 strings out of 476025
+ 735432 string characters out of 5790017
+ 1852388 words of memory out of 5000000
+ 48727 multiletter control sequences out of 15000+600000
+ 520605 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,6n,103p,805b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on database.pdf (4 pages, 495974 bytes).
+ 99i,6n,103p,790b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
+Output written on Katie-GP.pdf (1 page, 45379 bytes).
 PDF statistics:
- 60 PDF objects out of 1000 (max. 8388607)
- 33 compressed objects within 1 object stream
+ 31 PDF objects out of 1000 (max. 8388607)
+ 19 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 33 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
