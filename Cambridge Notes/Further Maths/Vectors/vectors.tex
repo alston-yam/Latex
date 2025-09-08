@@ -1,0 +1,150 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{empheq}
+\usepackage{mdframed}
+\usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{psfrag}
+\usepackage{pgfplots}
+\usepackage{bm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Other Settings
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\geometry{a4paper}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define some useful colors %%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{ocre}{RGB}{243,102,25}
+\definecolor{mygray}{RGB}{243,243,244}
+\definecolor{deepGreen}{RGB}{26,111,0}
+\definecolor{shallowGreen}{RGB}{235,255,255}
+\definecolor{deepBlue}{RGB}{61,124,222}
+\definecolor{shallowBlue}{RGB}{235,249,255}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define an orangebox command %%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\orangebox[1]{\fcolorbox{ocre}{mygray}{\hspace{1em}#1\hspace{1em}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% English Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheoremstyle{mytheoremstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\newtheoremstyle{myproblemstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowGreen,linecolor=deepGreen,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{theorem}{Theorem}[section]
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowBlue,linecolor=deepBlue,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{definition}{Definition}[section]
+\theoremstyle{myproblemstyle}
+\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{problem}{Problem}[section]
+\theoremstyle{myproblemstyle}
+\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{example}{Example}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Plotting Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepgfplotslibrary{colorbrewer}
+\pgfplotsset{width=8cm,compat=1.9}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{9231 CAIE Further Maths — Vectors \& Planes}
+\author{Alston}
+\date{}
+\parskip=5pt
+\parindent=0pt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+    \maketitle
+    \section{Common Perpendicular}
+
+    \begin{definition}[Vector Product]
+        \[\mathbf{a} \times \mathbf{b} = |\mathbf{a}||\mathbf{b}| \sin(\theta) \hat{\mathbf{n}}\]
+    \end{definition}
+
+    If we consider the LHS, we have 
+    
+    \begin{theorem}[Common Perpendicular of two Vectors]
+        Let
+    $$ \mathbf{a} = \begin{pmatrix}
+        a_1 \\ a_2 \\ a_3
+    \end{pmatrix} \text{ and } \mathbf{b} = \begin{pmatrix}
+        b_1 \\ b_2 \\ b_3
+    \end{pmatrix}$$ 
+    
+    then the common perpendicular vector is given by $\begin{vmatrix}
+        i & j & k \\ a_1 & a_2 & a_3 \\ b_1 & b_2 & b_3
+    \end{vmatrix}$    
+    \end{theorem}
+
+    This vector we get doesn't have magnitude 1. If we look at the RHS, we have a direction in the form of $\hat{\mathbf{n}}$, and then the magnitude is given by other the other terms of $|\mathbf{a}||\mathbf{b}| \sin(\theta)$. This magnitude is actually the area of the parallelogram made by the two vectors $\mathbf{a}$ and $\mathbf{b}$.
+
+    So we can actually find the the triangle made by 3 points really easily:
+    
+    \begin{example}
+        Find the area of $\triangle ABC$, with $A = (4, 1, -2), B=(5, 5, 6), C=(0, 3, 7)$.
+    \end{example}
+
+    \textit{ Sol. } $\vec{AB} = i + 4j + 8k$, $\vec{BC} = -5i - 2j + k$
+
+    Then we can find the common perpendicular: 
+
+    \[\begin{vmatrix}
+        i & j & k \\ 1 & 4 & 8 \\ -5 & -2 & 1
+    \end{vmatrix} = 20i - 41j + 18k\]
+
+    Then we can find the magnitude of this vector, and then half it to get the area of the triangle.
+
+
+    \section{Equation of a Line}
+
+    \subsection{Shortest distance of a point to a line}
+
+    Imagine a line $\mathbf{r} = \mathbf{a} + \mathbf{b}\cdot t$, and another random point $P$. To find the shortest distance, we consider a point $Q$ on the line $\mathbf{r}$ and also $PQ$ perpendicular to $\mathbf{r}$. Get $PQ$ in terms of $t$, and then use the scalar product with $\mathbf{b}$ is 0.
+    
+    Alternatively, you can also use the vector product, by taking a random point $A$ on $\mathbf{r}$ and finding vector $AP$. Now you multiply the unit vector in the direction $\mathbf{b}$, and find the magnitude of their vector product.
+
+    \begin{center}
+        \includegraphics[width=100pt]{image.png}
+    \end{center}
+
+    \subsection{Shortest distance between two lines}
+    If we have two lines $\mathbf{r_1} = \mathbf{a_1} + \mathbf{b_1} \cdot t$ and $\mathbf{r_2} = \mathbf{a_2} + \mathbf{b_2} \cdot t$, then the shortest distance $|PQ|$ between the two lines is parallel to $\mathbf{b_1} \times \mathbf{b_2}$ where $P$ and $Q$ are on $\mathbf{r_1}$, $\mathbf{r_2}$ respectively.
+
+    $S$, $T$ are two positional vectors on the two lines. We have $|PQ| = |ST| \cdot \cos(\theta)$. $\cos(\theta)$ can be calculated from the scalar product.
+
+    We get that the formula is 
+    
+    \begin{theorem}[Minimal distance between two lines]
+        \[|PQ| = \frac{(\mathbf{a_1} - \mathbf{a_2})\cdot(\mathbf{b_1 \times b_2})}{|\mathbf{b_1 \times b_2}|}\]
+    \end{theorem}
+
+    \begin{center}
+        \includegraphics[width=100pt]{image copy.png}
+    \end{center}
+
+    I am essentially just taking a random vector between the two lines in the form of $ST$. Then, I'm projecting this $ST$ onto the direction that is normal to both lines to find the distance.
+
+
+    \section{Planes}
+    3 points uniquely identify a plane. It has 3 forms: scalar, cartesian, and vector.
+
+    Take two random points $A$ and $R$ in the plane. The vector $AR$ is perpendicular to the normal. This means: $\mathbf{(a-r) \cdot n} = 0 \implies \mathbf{a\cdot n = r \cdot n}$ so this is the scalar form of a plane.
+
+    To get the cartesian form, we need a positional vector and also the normal vector. If we let $\mathbf{a}$ be the position vector and $\mathbf{n}$ to be the normal vector, from the scalar equation, setting $r$ to be any point in the plane, we can actually get the cartesian equation.
+
+    Finally for the vector form, we need two directional vectors that are in the plane. Note that once we have the two directional vectors, we can take their vector product and hence find the normal vector. 
+
+
+
+    
+\end{document}
