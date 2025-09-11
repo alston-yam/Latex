@@ -1,0 +1,106 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{empheq}
+\usepackage{mdframed}
+\usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{psfrag}
+\usepackage{pgfplots}
+\usepackage{bm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Other Settings
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\geometry{a4paper}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define some useful colors %%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{ocre}{RGB}{243,102,25}
+\definecolor{mygray}{RGB}{243,243,244}
+\definecolor{deepGreen}{RGB}{26,111,0}
+\definecolor{shallowGreen}{RGB}{235,255,255}
+\definecolor{deepBlue}{RGB}{61,124,222}
+\definecolor{shallowBlue}{RGB}{235,249,255}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define an orangebox command %%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\orangebox[1]{\fcolorbox{ocre}{mygray}{\hspace{1em}#1\hspace{1em}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% English Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheoremstyle{mytheoremstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\newtheoremstyle{myproblemstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowGreen,linecolor=deepGreen,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{theorem}{Theorem}[section]
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowBlue,linecolor=deepBlue,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{definition}{Definition}[section]
+\theoremstyle{myproblemstyle}
+\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{problem}{Problem}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Plotting Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepgfplotslibrary{colorbrewer}
+\pgfplotsset{width=8cm,compat=1.9}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{9618 CAIE Computer Science — Security and Integrity}
+\author{Alston}
+\date{}
+\parskip=0pt
+\parindent=0pt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+    \maketitle
+
+    \section{Terminology}
+    Phishing, Pharming, Malware (Virus, Worm, Trojan Horse, Logic Bomb, Spyware, Bots)
+
+    \vspace{5pt}
+
+    Phishing: trying to get the user to click on a bad link.
+    
+    Pharming: Uses $\textbf{DNS Poisoning}$ to redirect your page request to a bad site. 
+
+    \vspace{5pt}
+
+    $\textbf{Data Security:}$ Ensures that data are not going to be lost or corrupted. (Frequent backups)
+    
+    $\textbf{Data Privacy:}$ Prevents unauthorised access (hackers) from accessing the data. This is achieved with firewalls, antivirus softwares etc.
+    
+    $\textbf{Data Integrity:}$ Ensures that data represents what it's supposed to represent. We use Validation and Verificaiton for that.
+
+    \section{Validation}
+    This is the test to ensure that data are entered in the correct format. There are many different ways for this.
+
+    Type, range, limit, format, existence, presense, length, consistency, uniqueness checks.
+
+    These are pretty self explanatory. Presence check: if the data exists where it should be. Existence: checks if the data in a database/file physically exists. 
+
+    \section{Verification}
+    Ensures that data entered has integrity (accurately represents what it's supposed to)
+    Examples are: $\textbf{Double Entry, Visual Check, Checksum}$. 
+
+    The only deep one is the check sum:
+
+    \subsection{Check Sum}
+    There are also different types: we may use a check digit (at the end of a long list of numbers), and that is used with mod. Example usage: ISBN, Vehicle identification numbers, barcodes.
+
+    \vspace{5pt}
+
+    Parity Checks: Appends a parity bit at the end of the byte to make it up to the even/odd number of 1s. A $\textbf{parity block}$ is just a table of bytes. You do the parity bit horizontally and vertically. Then you can identify where it is that you went wrong. 
+
+    If the digits got interchanged though, the parity block doesn't work.
+    
+\end{document}
