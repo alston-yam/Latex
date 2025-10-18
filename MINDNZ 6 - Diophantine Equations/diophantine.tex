@@ -1,0 +1,154 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{empheq}
+\usepackage{mdframed}
+\usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{psfrag}
+\usepackage{pgfplots}
+\usepackage{bm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Other Settings
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\geometry{a4paper}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define some useful colors %%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{ocre}{RGB}{243,102,25}
+\definecolor{mygray}{RGB}{243,243,244}
+\definecolor{deepGreen}{RGB}{26,111,0}
+\definecolor{shallowGreen}{RGB}{235,255,255}
+\definecolor{deepBlue}{RGB}{61,124,222}
+\definecolor{shallowBlue}{RGB}{235,249,255}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define an orangebox command %%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\orangebox[1]{\fcolorbox{ocre}{mygray}{\hspace{1em}#1\hspace{1em}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% English Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheoremstyle{mytheoremstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\newtheoremstyle{myproblemstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowGreen,linecolor=deepGreen,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{theorem}{Theorem}[section]
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowBlue,linecolor=deepBlue,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{definition}{Definition}[section]
+\theoremstyle{myproblemstyle}
+\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{problem}{Problem}[section]
+\theoremstyle{myproblemstyle}
+\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{example}{Example}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Plotting Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepgfplotslibrary{colorbrewer}
+\pgfplotsset{width=8cm,compat=1.9}
+\parskip=3pt
+\parindent=0pt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Diophantine Equations}
+\author{Alston Yam}
+\date{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+    \maketitle
+
+    \section{Introduction}
+    Diophantine equations are equations that ask for $\textbf{integer}$ solutions. This can come up in many places, not just in Olympiad but also normal maths too. Here are a few ways to solve them.
+
+    \section{Factorisation}
+    For solutions in integers, if we can factor the two sides so that one side gets to a constant, the rest of the problem will solve itself by simple case work. Here are a few factorising techniques, motivated by examples:
+
+    \begin{example}
+        Solve 
+        \[x^2 = y^2 + 7\]
+    \end{example}
+
+    And so this is very doable by simply factoring into $(x-y)(x+y) = 7$ and by doing case work.
+
+    \subsection{Sophie Germain Identity — who said we can't factor sum of squares?}
+
+    Consider the expression 
+    \[x^4 + 4y^4\]
+
+    It's a useful trick to recognise that this expression is in fact factorisable.
+
+    \[x^4 + 4y^4 = x^4 + 4y^4 + 4x^2y^2 - 4x^2y^2 = (x^2 + 2y^2) - 4x^2y^2 = (x^2 - 2xy + 2y^2)(x^2 + 2xy + 2y^2)\]
+
+    \begin{problem}[Example Problem 1]
+        Find all solutions in integers for the equation
+        \[xy = x + y + 4\]
+    \end{problem}
+
+    \begin{problem}[Example Problem 2]
+        Find all solutions in integers for the equation
+        \[x^2 + y^2 = x + y + 2\]
+    \end{problem}
+
+    \section{Using Mod}
+    Specifically, we can analyse the outputs of numbers when we raise them to some power. This is sometimes also know as the quadratic residue (for 2nd powers).
+
+    This leads naturally to Fermat's Little Theorem. As a reminder:
+
+    \begin{theorem}[Fermat's Little Theorem]
+        \[a^{p-1} \equiv 1 \pmod{p}\]
+    \end{theorem}
+
+    However, problems can be solved with a clever mod.
+
+    \begin{example}[RMO 2017/2]
+        Show that the equation 
+        \[a^3 + (a+1)^3 + \cdots + (a+6)^3 = b^4 + (b+1)^4\]
+
+        Has no solutions in $a$, $b$.
+    \end{example}
+
+    The key observation here is to just use mod $7$. The specific details are left as an exercise for the reader.
+
+    \section{Infinite Descent}
+    The idea of using the technique of infinite descent is that suppose we find a solution $x_0$. Then by some manipulation, we find another solution $x_1$. This way, we can generate infinite solutions.
+
+    If we have some additional requirements such as $x$ have to be positive, then if we prove $x_i > x_{i+1}$ then we would find a contradiction which is good.
+
+    \begin{example}[APMO 2017/1]
+        We call a $5$-tuple of integers \textit{arrangeable} if its elements can be labeled $a, b, c, d, e$ in some order so that $a-b+c-d+e=29$. Determine all $2017$-tuples of integers $n_1, n_2, . . . , n_{2017}$ such that if we place them in a circle in clockwise order, then any $5$-tuple of numbers in consecutive positions on the circle is arrangeable.
+    \end{example}
+
+    We can replace each value $n_i$ on the circle with $m_i = n_i - 29$. This is consistent with the problem conditions. An added benefit is that we can now see $m_i \equiv m_{i+5} \pmod{2}$, which we can now use to loop around the circle to see that all $m_i$ must have the same parity.
+
+    Now, we can argue that all $m_i$ must be even, by considering we have $$m_i - m_{i+1} + m_{i+2} - m_{i+3} + m_{i+4} = 0.$$
+
+    This means that we can divide all $m_i$ by $2$ and still have a valid arrangement. But this is a contradiction! As we can do this forever, which will eventually force all of the $m_i$s to be 0. This in turn, when placed back into our original problem, corresponds too all values being 29.
+
+    \pagebreak
+
+    \section{Problems}
+    \begin{problem}
+        Are there integers $a, b$ such that both $a^5b + 3$ and $ab^5 + 3$ are perfect cubes?
+    \end{problem}
+
+    \begin{problem}
+        Prove that for natural numbers $m$, $n$, 
+        \[3^m + 3^n + 1\]
+        cannot be a perfect square.
+    \end{problem}
+
+
+
+
+
+    
+\end{document}

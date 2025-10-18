@@ -1,0 +1,201 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{empheq}
+\usepackage{mdframed}
+\usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{psfrag}
+\usepackage{pgfplots}
+\usepackage{bm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Other Settings
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\geometry{a4paper}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define some useful colors %%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{ocre}{RGB}{243,102,25}
+\definecolor{mygray}{RGB}{243,243,244}
+\definecolor{deepGreen}{RGB}{26,111,0}
+\definecolor{shallowGreen}{RGB}{235,255,255}
+\definecolor{deepBlue}{RGB}{61,124,222}
+\definecolor{shallowBlue}{RGB}{235,249,255}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define an orangebox command %%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\orangebox[1]{\fcolorbox{ocre}{mygray}{\hspace{1em}#1\hspace{1em}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% English Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheoremstyle{mytheoremstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\newtheoremstyle{myproblemstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowGreen,linecolor=deepGreen,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{theorem}{Theorem}[section]
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowBlue,linecolor=deepBlue,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{definition}{Definition}[section]
+\theoremstyle{myproblemstyle}
+\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{problem}{Problem}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Plotting Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepgfplotslibrary{colorbrewer}
+\pgfplotsset{width=8cm,compat=1.9}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Chinese Remainder Theorem}
+\author{Alston Yam}
+\date{}
+\parskip=5pt
+\parindent=0pt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+    \maketitle
+
+    \section{Introduction}
+    Lets have a look at values of $x$ that satisfy the following equations:
+    \begin{align*}
+        x &\equiv 2 \pmod{7} \\
+        x &\equiv 1 \pmod{3}
+    \end{align*}
+
+    We can think about solutions satisfying each of the individual congruences. To the first one: 
+    \[A = \{\ldots, -19, -12, -5, 2, 9, 16, 23, \ldots\}\]
+
+    And the second one:
+    \[B = \{\ldots, -8, -5, -2, 1, 4, 7, 10, \ldots\}\]
+
+    So we simply see that all the possible values of $x$ are $x \in A \cup B$.
+
+    \subsection{Other possible cases}
+    There are also some other cases to think about: 
+    \begin{align*}
+        x &\equiv 1 \pmod{3} \\
+        x &\equiv 1 \pmod{6}
+    \end{align*}
+
+    Or consider this one:
+    \begin{align*}
+        x &\equiv 1 \pmod{6} \\
+        x &\equiv 2 \pmod{9}
+    \end{align*}
+
+    What happens in each case when we try to find the general solution? These experiments are left as an exercise to the reader. 
+    \pagebreak
+
+
+    \section{The theorem itself}
+    \begin{theorem}[Chinese Remainder Theorem]
+        Let $a_1, a_2, \ldots, a_n$ be integers, and $b_1, b_2, \ldots, b_n$ be pairwise coprime integers. Then the system of equations
+        \begin{align*}
+            x &\equiv a_1 \pmod{b_1} \\
+            x &\equiv a_2 \pmod{b_2} \\
+            \vdots \\
+            x &\equiv a_n \pmod{b_n}
+        \end{align*}
+        Has a $\textit{unique}$ solution under $\pmod{b_1b_2 \ldots b_n}$.
+    \end{theorem}
+
+    \begin{proof}[Proof of CRT]
+
+        We split the problem into uniqueness and existence:
+
+        \textbf{Uniqueness}: Assume that there are two solutions $x, y$ that satisfy all the congruences. Then we must get that $x-y$ is divisible by $b_i$ $\forall i$. However we have the condition that $b_i$ are pairwise coprime, so $x-y$ must be divisible by $N = b_1b_2 \ldots b_n$, and as a result, $x \equiv y \pmod{N}$, contradiction.
+
+        \textbf{Existence}: We will proceed by induction on n. 
+
+        The case $n=1$ is trivial, so we start from $n=2$. Consider the congruences 
+        \begin{align*}
+            x &\equiv a_1 \pmod{b_1} \\
+            x &\equiv a_2 \pmod{b_2}
+        \end{align*}
+
+        By Bezout's identity, we have there exist integers $m_1, m_2$ such that $m_1b_1 + m_2b_2 = 1$. Lets construct $x = a_2m_1b_1 + a_1m_2b_2$. We will see that this $x$ is the desired x: 
+        \[x = a_2(1-m_2b_2) + a_1m_2b_2 = a_2 + m_2b_2(a_1 - a_2) \equiv a_2 \pmod{b_2}\]
+
+        Then the other congruence is satisfied similarly. 
+
+        Assume that there exists a unique $x$ such that $n$ of these congruences hold true simultaneously. 
+
+        Consider $n+1$ congruences:
+        \begin{align*}
+            x &\equiv a_1 \pmod{b_1} \\
+            x &\equiv a_2 \pmod{b_2} \\ 
+            \vdots \\
+            x &\equiv a_n \pmod{b_n} \\ 
+            x &\equiv a_{n+1} \pmod{b_{n+1}}
+        \end{align*}
+        We can combine these like so: 
+
+        \begin{align*}
+            x &\equiv a_{1, 2, \ldots n} \pmod{b_{1, 2, \ldots n}} \\
+            x &\equiv a_{n+1} \pmod{b_{n+1}}
+        \end{align*}
+
+        And here we have our $n=2$ base case which we know to work.
+
+
+
+
+        
+    \end{proof}
+
+    \section{Applications of the theorem}
+    
+    This theorem is extremely useful when we want to construct an $x$ that satisfies many properties. 
+
+    \begin{problem}
+        Show that for $c \in \mathbb{Z}$ and a prime $p$, the congruence $x^x \equiv c \pmod{p}$ has a solution. 
+    \end{problem}
+
+    The idea is that we are looking at a prime modulus, so FLT probably is going to be useful. Note that $x^{p-1} \equiv 1 \pmod{p}$, so the modulus cycles every $p-1$. 
+
+    Consider the system of congruences: 
+
+    \begin{align*}
+        x &\equiv 1 \pmod{p-1} \\
+        x &\equiv c \pmod{p}
+    \end{align*}
+
+    Then we know that since $\gcd{(p, p-1)} = 1$, there is a solution to $x$ by CRT, and hence we have $x^x \equiv x^{x \pmod{p-1}} \equiv x^1 \equiv c \pmod{p}$ and so we are done.
+
+    \begin{problem}
+        What are the last 2 digits of $49^{19}$?
+    \end{problem}
+
+    So we are interested in $49^{19} \pmod{100}$. Notice that $100 = 25 \times 4$ and $\gcd(25, 4) = 1$. This means that we only really need to find the $x$ such that 
+    \begin{align*}
+        x &\equiv 49^{19} \pmod{25} \\
+        x &\equiv 49^{19} \pmod{4}
+    \end{align*}
+
+    We can compute each of the congruences and turn it into 
+    \begin{align*}
+        x &\equiv -1 \pmod{25} \\
+        x &\equiv 1 \pmod{4}
+    \end{align*}
+
+    Which, by CRT, has unique solution $x \equiv ((-1)(4)(19) + (1)(25)(1)) \equiv 49 \pmod{100}$, so we know that the last 2 digits of $x$ are 49. 
+
+
+
+
+
+
+
+
+
+    
+\end{document}
