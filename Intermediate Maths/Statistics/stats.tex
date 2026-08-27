@@ -1,0 +1,193 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{empheq}
+\usepackage{mdframed}
+\usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{psfrag}
+\usepackage{pgfplots}
+\usepackage{bm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Other Settings
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\geometry{a4paper}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define some useful colors %%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{ocre}{RGB}{243,102,25}
+\definecolor{mygray}{RGB}{243,243,244}
+\definecolor{deepGreen}{RGB}{26,111,0}
+\definecolor{shallowGreen}{RGB}{235,255,255}
+\definecolor{deepBlue}{RGB}{61,124,222}
+\definecolor{shallowBlue}{RGB}{235,249,255}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define an orangebox command %%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\orangebox[1]{\fcolorbox{ocre}{mygray}{\hspace{1em}#1\hspace{1em}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% English Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheoremstyle{mytheoremstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\newtheoremstyle{myproblemstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowGreen,linecolor=deepGreen,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{theorem}{Theorem}[section]
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowBlue,linecolor=deepBlue,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{definition}{Definition}[section]
+\theoremstyle{myproblemstyle}
+\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{problem}{Problem}[section]
+\theoremstyle{myproblemstyle}
+\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{example}{Example}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Plotting Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepgfplotslibrary{colorbrewer}
+\pgfplotsset{width=8cm,compat=1.9}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Statistics}
+\author{Alston Yam}
+\date{}
+\parskip=3pt
+\parindent=0pt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+    \maketitle
+    
+    \section{Mean, Median, Mode, Range}
+    \subsection{Mean}
+    The mean is the same thing as the average. We are adding everything together, and then dividing by how many things we have.
+
+    \begin{definition}[Mean]
+        \[\text{Mean} = \frac{a_1 + a_2 + \cdots + a_n}{n}\]
+    \end{definition}
+
+    \subsection{Median}
+    If we order all the numbers we have, the median is the middle number.
+
+    \begin{example}
+        What is the median of $\{47, 23, 89, 12, 56, 71, 34\}$?
+    \end{example}
+
+    The ordered list is $\{12, 23, 34, 47, 56, 71, 89\}$, so the median is $47$.
+
+    If the list have an even amount of numbers, we will average the middle two numbers.
+
+    \subsection{Mode}
+    In a list of numbers, the mode is the number that appeared the most amount of times.
+
+    \subsection{Range}
+    The range is the largest number take away the smallest number in the list. Using the previous example:
+
+    \begin{example}
+        What is the range of $\{47, 23, 89, 12, 56, 71, 34\}$?
+    \end{example}
+
+    The range is $89 - 12 = 77$.
+
+    \begin{problem}
+        A lift has a weight limit of $1500$kg. If the average weight of the people in the lift is $80$kg and the combined weight of all people is $100$kg over the weight limit, how many people are in the lift?
+    \end{problem}
+
+
+
+    \section{Probability}
+    
+    Probability will always be between $0$ and $1$, $1$ is absolutely certain will happen, and $0$ is absolutely will not happen.
+
+    \begin{example}
+        The probability of rolling any number between $1$ and $6$ when rolling a dice is $1$.
+    \end{example}
+
+    To calculate a probability, we will do 
+    \[\text{Probability} = \frac{\text{Number of desired outcomes}}{\text{Total number of possible outcomes}}\]
+
+    \begin{problem}
+        What is the probability that, when I roll two dice and multiply their numbers together, the answer I get is larger than $20$? Express your answer as a simplified fraction.
+    \end{problem}
+
+    \begin{problem}
+        A bag contains 5 red marbles, 3 blue marbles, and 2 green marbles. If you draw one marble without looking, what is the probability that it is blue?
+    \end{problem}
+
+    \begin{problem}
+        A coin is flipped twice. What is the probability of getting at least one heads? Express your answer as a simplified fraction.
+    \end{problem}
+
+    \begin{problem}
+        A deck of cards has 52 cards. If you draw one card, what is the probability that it is a heart or a diamond? Express your answer as a simplified fraction.
+    \end{problem}
+
+    \section{Graphs}
+
+    \subsection{Bar Graph}
+    A bar graph displays categorical data with rectangular bars.
+
+    \subsection{Stem and Leaf Plot}
+    A stem and leaf plot organizes data by showing stems (tens digits) and leaves (ones digits).
+
+    \subsection{Box and Whisker Plot}
+    A box and whisker plot shows the distribution of data using quartiles. There are upper and lower quartiles.
+
+    \subsection{Line Graph}
+    A line graph shows how data changes over time by connecting data points with lines.
+
+    \section{Problems}
+
+    For problems $1, 2, 3, 4, 5$, find the mean, median, mode and range for each of these datasets.
+
+    \begin{problem}
+        The heights (in cm) of 9 students are: $$162, 158, 170, 165, 158, 175, 168, 158, 172$$
+
+    \end{problem}
+
+    \begin{problem}
+        A survey recorded the number of hours 8 students studied per week: $$5, 12, 8, 10, 12, 7, 12, 9$$
+    \end{problem}
+
+    \begin{problem}
+        Test scores for a class are: $85, 92, 78, 88, 92, 95, 78, 88, 92, 81$.
+    \end{problem}
+
+    \begin{problem}
+        Daily temperatures (°C) for one week: $18, 22, 20, 25, 22, 19, 23$.
+
+    \end{problem}
+
+    \begin{problem}
+        Number of books read by 10 students in a month: $3, 5, 2, 5, 4, 5, 3, 6, 5, 2$.
+    \end{problem}
+
+    \begin{problem}
+        Jake has $2$ children, a boy and a girl. Each of his children has two children, a boy and a girl. If he has one child from each family to stay, what is the probability that they are both boys or both girls?
+    \end{problem}
+
+    \begin{problem}
+        The average score of the $11$ players in a cricket team is $57$. One player's score was wrongly recorded as $66$, when it should have been $99$. What should the average score be?
+    \end{problem}
+
+    \begin{problem}
+        In his pocket Fred has one of each of the current coins and notes in New Zealand. He takes two out of his pocket. How many different totals could he have in his hand?
+    \end{problem}
+
+    \begin{problem}
+        An unusual die has six faces labelled $1, 2, 3, 3, 5, 7$. If two of these dice are rolled, and the numbers showing on the upper faces are added, what is the number of possible different sums?
+    \end{problem}
+
+
+
+
+
+\end{document}

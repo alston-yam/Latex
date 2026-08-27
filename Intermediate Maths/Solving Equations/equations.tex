@@ -1,0 +1,248 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{empheq}
+\usepackage{mdframed}
+\usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{psfrag}
+\usepackage{pgfplots}
+\usepackage{bm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Other Settings
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\geometry{a4paper}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define some useful colors %%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{ocre}{RGB}{243,102,25}
+\definecolor{mygray}{RGB}{243,243,244}
+\definecolor{deepGreen}{RGB}{26,111,0}
+\definecolor{shallowGreen}{RGB}{235,255,255}
+\definecolor{deepBlue}{RGB}{61,124,222}
+\definecolor{shallowBlue}{RGB}{235,249,255}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define an orangebox command %%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\orangebox[1]{\fcolorbox{ocre}{mygray}{\hspace{1em}#1\hspace{1em}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% English Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheoremstyle{mytheoremstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\newtheoremstyle{myproblemstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowGreen,linecolor=deepGreen,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{theorem}{Theorem}[section]
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowBlue,linecolor=deepBlue,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{definition}{Definition}[section]
+\theoremstyle{myproblemstyle}
+\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{problem}{Problem}[section]
+\theoremstyle{myproblemstyle}
+\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{example}{Example}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Plotting Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepgfplotslibrary{colorbrewer}
+\pgfplotsset{width=8cm,compat=1.9}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Solving Equations}
+\author{Alston Yam}
+\date{}
+\parskip=2pt
+\parindent=0pt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+    \maketitle
+
+    \section*{Learning Goals}
+    \begin{itemize}
+        \item Understand what a simultaneous equation represents
+        \item Solving systems with one variable
+        \item Solve systems with substitution and elimination
+        \item Check if your solution makes sense    
+    \end{itemize}
+
+    \section{Why Equations?}
+    You might be thinking about $x$ and $y$. These are simply just a \textit{place holder} for a number you don't know yet. We call it a \textbf{variable}.
+
+    \begin{example}
+        I have a number, such that when I multiply it by $4$ and then add $2$, I get $18$. What is my number?
+    \end{example}
+
+    It's very easy to see that my number is $4$. But we will put it in equation terms:
+    \[4x + 2 = 18\]
+
+    I'm just using $x$ as a place holder for the number that I don't know yet. 
+
+    \begin{example}
+        I have two numbers. They add to $10$, and three times the first number take away the second number is $2$. What are the two numbers?
+    \end{example}
+    
+    Now we have two numbers, we can use $x$ and $y$.
+    \begin{align*}
+        x + y &= 10 \\
+        3x - y &= 2
+    \end{align*}
+
+    \begin{problem}
+        Sarah has some apples and oranges. She has 3 more apples than oranges. If she has 15 pieces of fruit altogether, how many apples and oranges does she have?
+    \end{problem}
+
+    \begin{problem}
+        A movie ticket costs \$8 and popcorn costs \$5. If Marcus spent \$46 on 7 items total (tickets and popcorns), how many of each did he buy?
+    \end{problem}
+    
+
+    \section{One Variable — The Basics}
+
+    You need to treat each equation like a balance. Whatever you do to one side, you \textbf{must} do it to the other side too, so the balance don't tip.
+
+    We can look at the previous example:
+    \[4x + 2 - 2 = 18 - 2 \implies 4x = 16 \implies x = 4\]
+
+    Kind of similar to working backwards, right?
+
+    \begin{problem}
+        Solve for $x$: $2x - 5 = 11$
+    \end{problem}
+
+    \begin{problem}
+        Solve for $x$: $\frac{x}{3} + 4 = 7$
+    \end{problem}
+
+    \begin{problem}
+        Solve for $x$: $5(x - 2) = 30$
+    \end{problem}
+
+    \begin{problem}
+        Solve for $x$: $7x + 3 = 2x + 18$
+    \end{problem}
+
+
+    \section{Two Variables}
+    Lets look at our example from before. 
+    \begin{align*}
+        x + y &= 10 \\
+        3x - y &= 2
+    \end{align*}
+
+    \subsection{Substitution}
+    We are going to \textit{isolate} the variables.
+
+    \[x + y = 10 \implies y = 10 - x\]
+
+    and 
+    \[3x - y = 2 \implies 3x = 2 + y \implies 3x - 2 = y \implies y = 3x - 2\]
+
+    But wait, we now have $y = \text{something}$ in two ways. Since both are representing the same thing, lets put them together:
+
+    \[10 - x = 3x - 2\]
+
+    We can solve this now for $x$, and we get $x = 3$. WAIT! We aren't done yet. We only found $x$, but it's very important you also find $y$.
+
+    To do that, we can just change $x$ into $3$ in one of the equations we had.
+
+    \[3 + y = 10 \implies y = 7\]
+
+    \subsection{Elimination}
+
+    Lets take the same equations again:
+    \begin{align*}
+        x + y &= 10 \\
+        3x - y &= 2
+    \end{align*}
+
+    In the end, the thing on the left side $x+y$ is just another number, and we know that number is $10$. Same thing with $3x - y$. So actually we can just add both of these equations together.
+    \begin{align*}
+        x + y + (3x - y) &= 10 + 2 \\
+        4x &= 12 \\
+        x &= 3
+    \end{align*}
+
+    Same thing as before, now we have $x$, we substitute it back and get $y = 7$.
+
+    \subsection{Presenting \& Checking Your Solution}
+    After you've solved the equation and you have your $x$ and $y$, write it like this: $(x, y) = (3, 7)$.
+
+    To check your solution, you need to substitute your answers back.
+    \begin{align*}
+        3 + 7 &= 10 \\
+        3 \times 3 - 7 &= 2
+    \end{align*}
+
+    Which all works out!
+
+    \subsection{Practice Problems}
+    \begin{problem}
+        Solve the system using substitution or elimination:
+        \begin{align*}
+            x + 2y &= 7 \\
+            2x - y &= 4
+        \end{align*}
+    \end{problem}
+
+    \begin{problem}
+        Solve the system using substitution or elimination:
+        \begin{align*}
+            3x + y &= 11 \\
+            x - y &= -3
+        \end{align*}
+    \end{problem}
+
+    \begin{problem}
+        Solve the system using substitution or elimination:
+        \begin{align*}
+            2x + 3y &= 12 \\
+            4x - y &= 5
+        \end{align*}
+    \end{problem}
+
+    \pagebreak
+
+    \section{Word Problems}
+    \begin{problem}
+        A farmer has a total of 50 animals, consisting of chickens and cows. If there are 20 more chickens than cows, how many of each type of animal does the farmer have?
+    \end{problem}
+
+    \begin{problem}
+        A bookstore sold a total of 120 books in one day. If the number of fiction books sold was twice the number of non-fiction books sold, how many of each type were sold?
+    \end{problem}
+
+    \begin{problem}
+        A class has a total of 30 students. If there are 5 more girls than boys in the class, how many boys and girls are there?
+    \end{problem}
+
+    \begin{problem}
+        A train leaves a station traveling at a speed of 60 km/h. Another train leaves the same station 30 minutes later, traveling at a speed of 90 km/h. How far from the station will the two trains meet?
+    \end{problem}
+
+    \begin{problem}
+        A rectangle has a length that is twice its width. If the perimeter of the rectangle is 48 cm, what are the dimensions of the rectangle?
+    \end{problem}
+
+    \begin{problem}
+        The sum of three consecutive integers is 72. What are the integers?
+    \end{problem}
+
+    \begin{problem}
+        A car rental company charges a flat fee of \$50 plus \$0.20 per mile driven. If a customer pays \$70, how many miles did they drive?
+    \end{problem}
+
+    \begin{problem}
+        A farmer has a total of 35 heads of chickens and rabbits. If the total number of feet is 94, how many chickens and how many rabbits does the farmer have?
+    \end{problem}
+    
+    
+\end{document}

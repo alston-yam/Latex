@@ -1,0 +1,214 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{empheq}
+\usepackage{mdframed}
+\usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{psfrag}
+\usepackage{pgfplots}
+\usepackage{bm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Other Settings
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\geometry{a4paper}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define some useful colors %%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{ocre}{RGB}{243,102,25}
+\definecolor{mygray}{RGB}{243,243,244}
+\definecolor{deepGreen}{RGB}{26,111,0}
+\definecolor{shallowGreen}{RGB}{235,255,255}
+\definecolor{deepBlue}{RGB}{61,124,222}
+\definecolor{shallowBlue}{RGB}{235,249,255}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define an orangebox command %%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\orangebox[1]{\fcolorbox{ocre}{mygray}{\hspace{1em}#1\hspace{1em}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% English Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheoremstyle{mytheoremstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\newtheoremstyle{myproblemstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowGreen,linecolor=deepGreen,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{theorem}{Theorem}[section]
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowBlue,linecolor=deepBlue,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{definition}{Definition}[section]
+\theoremstyle{myproblemstyle}
+\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{problem}{Problem}[section]
+\theoremstyle{myproblemstyle}
+\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{example}{Example}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Plotting Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepgfplotslibrary{colorbrewer}
+\pgfplotsset{width=8cm,compat=1.9}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Divisibility Rules}
+\author{Alston Yam}
+\date{}
+\parskip=3pt
+\parindent=0pt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+    \maketitle
+
+        \section*{Introduction}
+        Let's start with what ``divisibility'' means.
+
+        \begin{definition}[Divisibility]
+            If when $\spadesuit$ divided by $\diamondsuit$ does \textbf{NOT} leave a remainder, we can say $\spadesuit$ is \textit{divisible} by $\diamondsuit$.
+        \end{definition}
+
+        \begin{example}[divisible]
+            $21 \div 7 = 3$, remainder $0$.
+        \end{example}
+        Here, we see there is no remainder, so we can say that $21$ is \textit{divisible} by $7$
+
+        \begin{example}[not divisible]
+            $65 \div 8 = 8$, remainder $1$.
+        \end{example}
+        Here we have a remainder. Therefore we call $65$ to be \textit{not divisible} by $8$.
+
+        \section{Basic Rules}
+
+        \subsection{Rule for 2}
+        This is the easiest one to spot. If our number ends with $0, 2, 4, 6, 8$ (it is an even number), then it's divisible by $2$.
+
+        \subsection{Rule for 3}
+        For this one, we will add up all the digits in a number. If the total is divisible by $3$, then the original number also will be.
+
+        \begin{example}
+            Is $852$ divisible by $3$?
+        \end{example}
+
+        If we add up the digits in $852$, $8 + 5 + 2 = 15$. We also know that $15$ is divisible by $3$, so we can use the rule, and say that yes, $852$ is divisible by $3$ ($852 = 284 \times 3$).
+
+        \begin{example}
+            Is $412$ divisible by $3$?
+        \end{example}
+
+        $4 + 1 + 2 = 7$, and $7$ is not a multiple of $3$. So no, $412$ is NOT divisible by $3$.
+        
+        \subsection{Rule for 4}
+
+        For this rule, we look at the last two digits of a number. If those last two digits form a number divisible by $4$, then the entire number is divisible by $4$.
+
+        \begin{example}
+            Is $3516$ divisible by $4$?
+        \end{example}
+
+        We look at the last two digits: $16$. Since $16 \div 4 = 4$ with no remainder, $3516$ is divisible by $4$ ($3516 = 879 \times 4$).
+
+        \begin{example}
+            Is $2342$ divisible by $4$?
+        \end{example}
+
+        The last two digits are $42$. We have $42 \div 4 = 10$ remainder $2$. Since there is a remainder, $2342$ is NOT divisible by $4$.
+
+        \subsection{Rule for 5}
+        This is another easy one. If our number ends with a $5$ or a $0$, then it is divisible by $5$.
+
+        \subsection{Rule for 6}
+        For $6$, we just need to check that our number is divisible by \textbf{both} $2$ and $3$. If both of these are true, the our number is a multiple of $6$.
+
+        \subsection{Rule for 8}
+
+        For this rule, we look at the last three digits of a number. If those last three digits form a number divisible by $8$, then the entire number is divisible by $8$. (This is very similar to the rule for $4$).
+
+        \begin{example}
+            Is $5432$ divisible by $8$?
+        \end{example}
+
+        We look at the last three digits: $432$. Since $432 \div 8 = 54$ with no remainder, $5432$ is divisible by $8$ ($5432 = 679 \times 8$).
+
+        \begin{example}
+            Is $3217$ divisible by $8$?
+        \end{example}
+
+        The last three digits are $217$. We have $217 \div 8 = 27$ remainder $1$. Since there is a remainder, $3217$ is NOT divisible by $8$.
+
+        \subsection{Rule for 9}
+        This one is very similar to the rule for $3$. We will add up all the digits in the number, and if the total is divisible by $9$, then so will the original number.
+
+        \begin{example}
+            Is $9720$ divisible by $9$?
+        \end{example}
+
+        $9 + 7 + 2 + 0 = 18$, and $18$ is a multiple of $9$, so we can say that $9720$ is also divisible by $9$.
+
+        \subsection{Rule for 10}
+        If our number ends in a $0$, then it is divisible by $10$. 
+
+        \begin{problem}
+            Can you tell me why?
+        \end{problem}
+
+        \section{More Advanced}
+
+        \subsection{Rule for 7}
+
+        For this rule, we use a divisibility test: take the last digit, double it, and subtract it from the rest of the number. If the result is divisible by $7$, then the original number is too. Repeat this process if needed.
+
+        \begin{example}
+            Is $343$ divisible by $7$?
+        \end{example}
+
+        Take the last digit $3$, double it to get $6$, and subtract from $34$: $34 - 6 = 28$. Since $28 \div 7 = 4$ with no remainder, $343$ is divisible by $7$ ($343 = 49 \times 7$).
+
+        \subsection{Rule for 11}
+
+        For this rule, we alternately add and subtract the digits from right to left. If the result is divisible by $11$, then the original number is too.
+
+        \begin{example}
+            Is $121$ divisible by $11$?
+        \end{example}
+
+        Starting from the right: $1 - 2 + 1 = 0$. Since $0$ is divisible by $11$, we can say that $121$ is divisible by $11$ ($121 = 11 \times 11$).
+
+        \begin{example}
+            Is $2728$ divisible by $11$?
+        \end{example}
+
+        Starting from the right: $8 - 2 + 7 - 2 = 11$. Since $11$ is divisible by $11$, $2728$ is divisible by $11$ ($2728 = 248 \times 11$).  
+        \section{Problems for practice}
+
+        \begin{problem}
+            A bakery is packaging cookies into boxes. They have 348 cookies and want to pack them into boxes with 6 cookies each. Will all cookies fit evenly into boxes with no cookies left over?
+        \end{problem}
+
+        \begin{problem}
+            A farmer has some apples. When arranged in rows of 5, there are 3 left over. When arranged in rows of 7, there are 2 left over. What is the least number of apples the farmer could have?
+        \end{problem}
+
+        \begin{problem}
+            A teacher has 285 pencils to distribute equally among her students. If she has 9 students in her class, can she give each student the same number of pencils with none left over?
+        \end{problem}
+
+        \begin{problem}
+            A library is organizing books on shelves. When they try to place books in stacks of 4, they have 1 left over. When they arrange them in stacks of 6, they have 5 left over. What is the minimum number of books they could have?
+        \end{problem}
+
+        \begin{problem}
+            A community garden is planting flowers in rows. They have 810 flower seeds and want to plant them in groups of 9. Will all seeds be used evenly with none remaining?
+        \end{problem}
+
+        \begin{problem}
+            A factory produces widgets that must be packaged in quantities divisible by 2, 3, and 5. What is the smallest number of widgets they need to produce so the packages can be made with no widgets left over?
+        \end{problem}
+
+
+\end{document}

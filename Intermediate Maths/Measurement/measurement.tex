@@ -1,0 +1,197 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{empheq}
+\usepackage{mdframed}
+\usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{psfrag}
+\usepackage{pgfplots}
+\usepackage{bm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Other Settings
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\geometry{a4paper}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define some useful colors %%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{ocre}{RGB}{243,102,25}
+\definecolor{mygray}{RGB}{243,243,244}
+\definecolor{deepGreen}{RGB}{26,111,0}
+\definecolor{shallowGreen}{RGB}{235,255,255}
+\definecolor{deepBlue}{RGB}{61,124,222}
+\definecolor{shallowBlue}{RGB}{235,249,255}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define an orangebox command %%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\orangebox[1]{\fcolorbox{ocre}{mygray}{\hspace{1em}#1\hspace{1em}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% English Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheoremstyle{mytheoremstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\newtheoremstyle{myproblemstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowGreen,linecolor=deepGreen,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{theorem}{Theorem}[section]
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowBlue,linecolor=deepBlue,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{definition}{Definition}[section]
+\theoremstyle{myproblemstyle}
+\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{problem}{Problem}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Plotting Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepgfplotslibrary{colorbrewer}
+\pgfplotsset{width=8cm,compat=1.9}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Measurement \& Geometry}
+\author{Alston Yam}
+\date{}
+\parskip=3pt
+\parindent=0pt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+    \maketitle
+
+    \section{Units}
+    \begin{enumerate}
+        \item Litres (L) used for liquids
+        \item Metres (m) used for length
+        \item Grams (g) used for mass
+    \end{enumerate}
+
+    \section{Prefixes}
+
+    \begin{enumerate}
+        \item milli
+        \item centi
+        \item kilo
+        \item mega
+    \end{enumerate}
+
+    Prefixes are words we put in front of units (metres, litres, grams). 
+
+    There are $1000$ milli in one unit, (E.g: $1$ gram = $1000$ milligram, $1$ metre = $1000$ millimetre).
+    $100$ centi is in one unit, $1$ kilo is $1000$ units, and $1$ mega is $1000000$ units.
+
+    We rarely ever use centi in anything other than metres.
+
+    \section{Area}
+    \begin{theorem}[Circle]
+        \[\text{Area} = \pi r^2, \text{Circumference} = 2\pi r\]
+    \end{theorem}
+
+    \begin{theorem}[Triangle]
+        \[\text{Area} = \frac{1}{2}bh\]
+    \end{theorem}
+
+    \begin{theorem}[Trapezium]
+        \[\text{Area} = \frac{1}{2}(a+b)h\]
+    \end{theorem}
+    
+    \section{Measurement Conversions}
+
+    \begin{theorem}
+        If we fill a $10$cm by $10$cm by $10$cm box with water, we would've used $1$ litre of water, and $1$ litre of water will weigh exactly $1$ kilogram.
+    \end{theorem}
+
+    Think about it, in a cubic metre box (1m by 1m by 1m), we can actually fit $100 \times 100 \times 100 = 1000000$ smaller boxes that are 1cm by 1cm by 1cm. 
+    
+    Now, think of a square. If we were to double the side length of a square, what happens to its area? What about if we triple it? Think about a cube also. What happens to its volume if we double, triple its side lengths?
+
+    \section{Problems}
+    
+    \begin{problem}
+        How big is a $1m^3$ box, in $mm^3$?
+    \end{problem}
+
+    \begin{problem}
+        I have $8$ litres of water that I want to store in a cube box. What is the dimension of the box that I'll need?
+    \end{problem}
+
+    \begin{problem}
+        How many millilitres are in a megalitre?
+    \end{problem}
+
+    \begin{problem}
+        Car fuel costs $\$2.70$ per litre. Bob spent $\$108$ on fuel, and used it to travel $100$km. How many km can Bob travel with $1$ litre of fuel?
+    \end{problem}
+
+    \begin{problem}
+        I have a triangle, and I will double the length of each side to get a new triangle. By what factor did the area of my triangle increase by?
+    \end{problem}
+
+    \begin{problem}
+        A metal disc has a diameter of $12$cm. A hole is cut from the centre of the disc with radius one third of the original disc. What is the area of the disc remaining?
+    \end{problem}
+
+    \begin{problem}
+        How much string is required to tie up a parcel $2\times5\times12$cm allowing $10\%$ extra for the knot at the top? Write your answer in metres.
+    \end{problem}
+
+    \begin{problem}
+        Sam has a box that is $12$cm by 20cm by 7cm. He wants to pack his miniature cars in the box. They are in packets which measure $6$cm by 3cm by 2cm. What is the maximum number of miniature cars that hecould pack in the box?
+    \end{problem}
+
+    \begin{problem}
+        A rectangular whiteboard is $4$ times as long as it is wide. If it were $7$ metres shorter and $2$ metres wider, it would be a square. What is the area of the whiteboard? Express your answer in square centimetres.
+    \end{problem}
+
+    \begin{problem}
+        Tanya can shovel $8m^3$ of dirt in $3$ hours. Nikora can shovel $6m^3$ of dirt in $4$ hours. 
+        
+        What is the total amount of dirt that they will both have shovelled if they work at the same rate for $204$ hours over the next month?
+    \end{problem}
+
+    \begin{problem}
+        A trapezium has a base that is three times longer than its parallel side. It has a height that is two-thirds the base. If the trapezium has an area of $676cm^2$, what is the length of the base?
+    \end{problem}
+
+    \begin{problem}
+        Thre is a cube and a cuboid which have volumes in a ratio of $7:24$. The cuboid's length is $4$ times the length of the cube. The cuboid's width is $3$ times the length of the cube. What fraction of the cube's side is the height of the cuboid?
+
+        Express your answer as a fraction in its simplest form.
+    \end{problem}
+
+    \begin{problem}
+        A lift has a weight limit of $1500$kg. If the average weight of the people in the lift is $80$kg and the combined weight of all the people is $100$kg over the limit, how many people are in the lift?
+    \end{problem}
+
+    \begin{problem}
+        A cubic lamington cake, with side $x$cm, is covered in $1$cm thick icing on \textbf{all} sides. Find an expression for the volume of icing.
+    \end{problem}
+
+    \begin{problem}
+        I bend a 12cm piece of wire into a square and then into a $3, 4, 5$ triangle. What is the difference in areas of these two shapes?
+    \end{problem}
+
+    \begin{problem}
+        The four interior angles of a quadrilateral are $x^{\circ}, (3x)^{\circ}, (x+20)^{\circ}, (x+40)^{\circ}$. Find the size in degrees of the largest angle in this quadrilateral.
+    \end{problem}
+
+    \begin{problem}
+        $27$ small cubes are put together to make a bigger cube of side length $3$. If all sides but the bottom are painted red, how many small cubes have only two sides painted?
+    \end{problem}
+
+    \begin{problem}
+        A square ended cuboidal package has a volume of $300$ cubic centimetres. If the dimensions are all in whole centimetres, what are the dimensions of the package that has the least surface area?
+    \end{problem}
+
+    \begin{problem}
+        I have a length of rope that I want to use to mark off a rectangular area on the grass, I use the whole length every time. I can make many different rectangles, two I made have an area of $96$cm$^2$ and an area of $225$cm$^2$. What is the greatest rectangular area I can make with this length of rope?
+    \end{problem}
+
+
+    
+\end{document}

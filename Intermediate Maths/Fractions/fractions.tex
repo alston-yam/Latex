@@ -1,0 +1,172 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{empheq}
+\usepackage{mdframed}
+\usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{psfrag}
+\usepackage{pgfplots}
+\usepackage{bm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Other Settings
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\geometry{a4paper}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define some useful colors %%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{ocre}{RGB}{243,102,25}
+\definecolor{mygray}{RGB}{243,243,244}
+\definecolor{deepGreen}{RGB}{26,111,0}
+\definecolor{shallowGreen}{RGB}{235,255,255}
+\definecolor{deepBlue}{RGB}{61,124,222}
+\definecolor{shallowBlue}{RGB}{235,249,255}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define an orangebox command %%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\orangebox[1]{\fcolorbox{ocre}{mygray}{\hspace{1em}#1\hspace{1em}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% English Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheoremstyle{mytheoremstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\newtheoremstyle{myproblemstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowGreen,linecolor=deepGreen,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{theorem}{Theorem}[section]
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowBlue,linecolor=deepBlue,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{definition}{Definition}[section]
+\theoremstyle{myproblemstyle}
+\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{problem}{Problem}[section]
+\theoremstyle{myproblemstyle}
+\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{example}{Example}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Plotting Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepgfplotslibrary{colorbrewer}
+\pgfplotsset{width=8cm,compat=1.9}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Fractions, Decimals, Percentages}
+\author{Alston Yam}
+\date{}
+\parskip=2pt
+\parindent=0pt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+    \maketitle
+
+    \section{Fractions}
+    \subsection{Adding and Subtracting}
+
+    If two fractions have the same denomenator, add/subtract their numerator.
+
+    If they don't, multiply the top and the bottom by a number to make them have the same denomenator.
+
+    \begin{example}
+        What is $\frac{3}{4} + \frac{7}{9}$
+    \end{example}
+
+    \[\frac{3}{4} + \frac{7}{9} = \frac{3 \times 9}{4 \times 9} + \frac{7 \times 4}{9 \times 4} = \frac{27}{36} + \frac{28}{36} = \frac{55}{36}\]
+
+    \subsection{Multiplying}
+
+    When multiplying two fractions, multiply their numerator together, and their denomenator together.
+
+    \begin{example}
+        What is $\frac{3}{4} \times \frac{7}{9}$
+    \end{example}
+
+    \[\frac{3}{4} \times \frac{7}{9} = \frac{3 \times 7}{4 \times 9} = \frac{21}{36} = \frac{7}{12}\]
+
+    Look at the last step! We have divided both the top and the bottom number by $3$. This is called \textbf{simplifying}. This is very important, because it makes your work a lot tidier.
+
+    \subsection{Dividing}
+
+    When we divide fractions, we will flip the one we are dividing upside down.
+
+    \begin{example}
+        What is $\frac{3}{4} \div \frac{7}{9}$
+    \end{example}
+
+    \[\frac{3}{4} \div \frac{7}{9} = \frac{3}{4} \times \frac{9}{7} = \frac{3 \times 9}{4 \times 7} = \frac{27}{28}\]
+
+    \begin{problem}
+        Why are we multiplying by flipping the fraction over?
+    \end{problem}
+
+    \section*{Fraction Practice Problems}
+
+    \begin{enumerate}
+        \item $\frac{1}{3} + \frac{2}{5}$ \hfill \item $\frac{7}{8} - \frac{1}{4}$ \hfill
+        \item $2\frac{1}{2} + 1\frac{3}{4}$ \hfill \item $\frac{9}{5} - \frac{2}{3}$ \hfill
+        \item $\frac{3}{4} \times \frac{2}{5}$ \hfill \item $1\frac{1}{2} \times \frac{4}{7}$ \hfill
+        \item $\frac{5}{6} \times 2\frac{2}{3}$ \hfill \item $\frac{11}{4} \times \frac{8}{9}$ \hfill
+        \item $\frac{2}{3} \div \frac{1}{4}$ \hfill \item $1\frac{1}{3} \div \frac{2}{5}$ \hfill
+        \item $\frac{7}{9} \div 2\frac{1}{3}$ \hfill \item $\frac{5}{2} \div \frac{3}{8}$ \hfill
+        \item $\frac{1}{2} + \frac{3}{7} - \frac{1}{14}$ \hfill \item $2\frac{1}{4} - 1\frac{1}{3} + \frac{1}{6}$ \hfill
+        \item $\frac{5}{8} \times \frac{4}{15} \div \frac{1}{3}$ \hfill \item $1\frac{2}{3} \times \frac{9}{10} + \frac{1}{5}$ \hfill
+        \item $\left(\frac{3}{4} + \frac{1}{8}\right) \times \frac{2}{7}$ \hfill \item $2\frac{1}{2} \div \frac{5}{6} - \frac{1}{4}$ \hfill
+        \item $\frac{4}{5} + \frac{3}{10} - \frac{1}{2}$ \hfill \item $3\frac{1}{4} \times \frac{2}{13}$ \hfill
+        \item $\frac{6}{7} \div \frac{3}{14}$ \hfill \item $1\frac{3}{5} + 2\frac{1}{4}$ \hfill
+        \item $\left(\frac{2}{3} - \frac{1}{9}\right) \times \frac{3}{5}$ \hfill \item $\frac{10}{11} \div \frac{5}{22}$ \hfill
+        \item $\frac{7}{12} + \frac{5}{18} + \frac{1}{4}$ \hfill \item $3\frac{1}{3} - 1\frac{5}{6}$ \hfill
+        \item $\frac{3}{7} \times \frac{14}{9} \div \frac{2}{3}$ \hfill \item $2\frac{2}{5} \times 1\frac{1}{4} - \frac{1}{2}$ \hfill
+        \end{enumerate}
+
+    \section{Decimals}
+    Decimals are just place values, but going in the different direction.
+
+    For example, $0.27 = 0.2 + 0.07$ is just $2$ tenths and $7$ hundredths.
+
+    \section{Percentages}
+
+    Percentages are basically ``How many bits out of $100$ do I have''? Also, if we think about a $1$ in decimal terms, $1$ is equal to $100\%$.
+
+    Looking at our previous example then, $0.27 = \frac{27}{100} = 27\%$.
+
+
+    \section{Conversions}
+
+    \subsection{Fraction to Decimal}
+        \begin{enumerate}
+            \item $\frac{1}{2}$ \hfill \item $\frac{3}{4}$ \hfill \item $\frac{1}{5}$ \hfill \item $\frac{2}{5}$ \hfill
+            \item $\frac{7}{8}$ \hfill \item $\frac{3}{10}$ \hfill \item $\frac{5}{3}$ \hfill \item $\frac{9}{4}$ \hfill
+        \end{enumerate}
+
+        \subsection{Decimal to Percentage}
+        \begin{enumerate}
+            \item $0.25$ \hfill \item $0.5$ \hfill \item $0.75$ \hfill \item $0.1$ \hfill
+            \item $0.33$ \hfill \item $0.875$ \hfill \item $1.5$ \hfill \item $2.25$ \hfill
+        \end{enumerate}
+
+        \subsection{Fraction to Percentage}
+        \begin{enumerate}
+            \item $\frac{1}{4}$ \hfill \item $\frac{3}{5}$ \hfill \item $\frac{2}{3}$ \hfill \item $\frac{5}{8}$ \hfill
+            \item $\frac{9}{10}$ \hfill \item $\frac{1}{6}$ \hfill \item $\frac{7}{4}$ \hfill \item $\frac{11}{5}$ \hfill
+        \end{enumerate}
+
+        \subsection{Mixed Conversions}
+        \begin{enumerate}
+            \item Convert $45\%$ to a fraction \hfill \item Convert $0.6$ to a percentage \hfill
+            \item Convert $\frac{7}{10}$ to a decimal \hfill \item Convert $82\%$ to a decimal \hfill
+            \item Convert $0.125$ to a fraction \hfill \item Convert $\frac{5}{6}$ to a percentage \hfill
+            \item Convert $150\%$ to a decimal \hfill \item Convert $2.4$ to a percentage \hfill
+            \item Convert $\frac{13}{8}$ to a decimal \hfill \item Convert $225\%$ to a fraction \hfill
+        \end{enumerate}
+
+
+
+    
+\end{document}
+

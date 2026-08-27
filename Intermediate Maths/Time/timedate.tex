@@ -1,0 +1,159 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{empheq}
+\usepackage{mdframed}
+\usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{psfrag}
+\usepackage{pgfplots}
+\usepackage{bm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Other Settings
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\geometry{a4paper}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define some useful colors %%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{ocre}{RGB}{243,102,25}
+\definecolor{mygray}{RGB}{243,243,244}
+\definecolor{deepGreen}{RGB}{26,111,0}
+\definecolor{shallowGreen}{RGB}{235,255,255}
+\definecolor{deepBlue}{RGB}{61,124,222}
+\definecolor{shallowBlue}{RGB}{235,249,255}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define an orangebox command %%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\orangebox[1]{\fcolorbox{ocre}{mygray}{\hspace{1em}#1\hspace{1em}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% English Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheoremstyle{mytheoremstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\newtheoremstyle{myproblemstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowGreen,linecolor=deepGreen,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{theorem}{Theorem}[section]
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowBlue,linecolor=deepBlue,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{definition}{Definition}[section]
+\theoremstyle{myproblemstyle}
+\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{problem}{Problem}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Plotting Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepgfplotslibrary{colorbrewer}
+\pgfplotsset{width=8cm,compat=1.9}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Date \& Time}
+\author{Alston Yam}
+\date{}
+\parskip=3pt
+\parindent=0pt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+    \maketitle
+    
+    \section*{Learning Goals}
+
+    \section{Date}
+
+    Here are a few useful things to know:
+
+    \begin{enumerate}
+        \item A normal year has $365$ days, a leap year has $366$ (February would have $29$ days).
+        \item Every $4$ years is a leap year, every $100$ years is not a leap year, every $400$ is a leap year.
+        \item January $1$st 2001 was a Monday. This means that January $1$st 2002 will be a Tuesday. (This is different for leap years).
+    \end{enumerate}
+
+    Lets explain point $2$ a bit more. Normally, if a year number is divisible by $4$, it is a leap year (do you remember what is the divisibility rule for $4$)? But if that year is a multiple of $100$, it \textbf{isn't} a leap year, but if the year number is a multiple of $400$, it is a leap year.
+
+    \begin{problem}
+        Is $1736$ a leap year?        
+    \end{problem}
+
+    \begin{problem}
+        Is $2014$ a leap year?        
+    \end{problem}
+
+    \begin{problem}
+        Is $1800$ a leap year?        
+    \end{problem}
+
+    \begin{problem}
+        Is $2000$ a leap year?        
+    \end{problem}
+
+    \begin{problem}
+        Is $1200$ a leap year?        
+    \end{problem}
+    
+    \begin{problem}
+        Is $542$ a leap year?        
+    \end{problem}
+
+    \begin{problem}
+        Today is Sunday $4$th January, 2026. What day of the week will it be exactly two years from now?
+    \end{problem}
+
+    \begin{problem}
+        If today is a Thursday, what day of the week would it be $50$ days from now?
+    \end{problem}
+
+    \begin{problem}
+        For a certain leap year, January $21$st is a Wednesday. What day of the week would January $21$st the next year be?
+    \end{problem}
+
+    \begin{problem}
+        Alex was born on Monday January $1$st, 2001. Suppose today is his $15$th birthday. What day of the week is today?
+    \end{problem}
+
+
+
+    \section{Time}
+    Standard stuff:
+
+    \begin{enumerate}
+        \item $1000$ milliseconds are in a seconds
+        \item $60$ seconds in a minute
+        \item $60$ minutes in an hour
+        \item $24$ hours in a day
+    \end{enumerate}
+
+    \begin{problem}
+        How many seconds are in a day?
+    \end{problem}
+
+    \begin{problem}
+        How many hours are in a week
+    \end{problem}
+
+    \begin{problem}[Quite Hard]
+        Suppose I have been alive for $1$ billion seconds. How old am I, in years?
+    \end{problem}
+
+    \section{Problems}
+
+    \begin{problem}
+        This year Galileo would've been $462$ years old. How old was he if he died in $1642$? (This year is $2026$)
+    \end{problem}
+
+    \begin{problem}
+        The three Smith children have all moved out of home. Sasha returns every $10$ days to have dinner with her parents. Connor returns every $4$ days for dinner and Kayla returns every $12$ days to eat with her parents. If all three children have dinner with their parents on Sunday, what day of the week will it be the next time the three children are all back home for dinner?
+    \end{problem}
+
+    \begin{problem}
+        In a certain year, there were exactly four Tuesdays and exactly four Fridays in October. On what day of the week did Halloween, October 31st, fall on that year?
+    \end{problem}
+
+\end{document}
